@@ -18,7 +18,7 @@ public class TestTransaction : MonoBehaviour {
 
     public void AddPoints()
     {
-        PlayerAccountManager.instance.AddPlayerPoints(pointstoadd);
+        PlayerAccountManager.instance.AddPlayerGold(pointstoadd);
     }
 
     public void PayDebt()
@@ -33,7 +33,7 @@ public class TestTransaction : MonoBehaviour {
 
     public void SetTransactionWithPoints()
     {
-        PlayerAccountManager.instance.BuyWithPoints(testItem);
+        PlayerAccountManager.instance.BuyWithGold(testItem);
     }
 
     
