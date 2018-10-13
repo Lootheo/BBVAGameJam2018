@@ -9,8 +9,11 @@ public class StoreManager : MonoBehaviour {
     public RectTransform scrollArea;
     public List<Item> allItems;
     public List<GameObject> currentShopItems;
+
+    public PlayerData avatarData;
 	// Use this for initialization
 	void Start () {
+        avatarData = SaveData.Load();
         ShowItemsOfType(-1);
 	}
 	
@@ -41,8 +44,8 @@ public class StoreManager : MonoBehaviour {
         {
             GameObject itemInstance = Instantiate(shopEntryPrefab, scrollArea);
             ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
-            shopItem.itemImage.sprite = item.itemGraphic;
-            shopItem.itemText.text = item.itemName;
+            shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
+            
             scrollArea.sizeDelta += new Vector2(320, 0);
             currentShopItems.Add(itemInstance);
             //Text itemText = shopItem.

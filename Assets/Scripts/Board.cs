@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class Board : MonoBehaviour {
@@ -15,6 +16,10 @@ public class Board : MonoBehaviour {
 
     public float swapTime = 0.2f;
 
+    public Text goldGainedText, enemyHealthLeft;
+    public Image enemyHealthBar;
+
+    public int totalGoldGained, enemyMaxHealth, enemyCurrentHealth;
 
     TileClass[,] m_allTiles;
     Piece[,] m_allPieces;
@@ -31,12 +36,20 @@ public class Board : MonoBehaviour {
         SetupTiles();
         SetupCamera();
         FillBoard(5, 1f);
+        totalGoldGained = 0;
+        enemyMaxHealth = Random.Range(100, 400);
+        enemyCurrentHealth = enemyMaxHealth;
+        goldGainedText.text = totalGoldGained.ToString();
+        enemyHealthLeft.text = enemyCurrentHealth.ToString();
         //HighlightMatches();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DestroyTilesOfColor(Piece.MatchValue.Blue);
+        }
 	}
 
     void SetupTiles()
@@ -54,10 +67,26 @@ public class Board : MonoBehaviour {
         }
     }
 
+    void DestroyTilesOfColor(Piece.MatchValue value)
+    {
+        List<Piece> ColorTiles = new List<Piece>();
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (m_allPieces[i,j].matchValue == value)
+                {
+                    ColorTiles.Add(m_allPieces[i, j]);
+                }
+            }
+        }
+        StartCoroutine(ClearAndRefillBoardRoutine(ColorTiles));
+    }
+
 
     void SetupCamera()
     {
-        Camera.main.transform.position = new Vector3((float)(width-1) / 2f, (float)(height-1) / 2f, -10f);
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, (float)(height-1) / 2f, -10f);
         float aspectRatio = (float)Screen.width / (float)Screen.height;
         float verticalSize = (float)height / 2f + (float)borderSize;
         float horizontalSize = ((float)width / 2f + (float)borderSize)/aspectRatio;
@@ -369,41 +398,60 @@ public class Board : MonoBehaviour {
         return (combinedMatches.Count >= minLength) ? combinedMatches : null;
     }
 
-    void HighlightMatches()
-    {
-        for (int i = 0; i < width; i++)
-        {
-            for (int j = 0; j < height; j++)
-            {
-                HighlightMatchesAt(i, j);
-            }
-        }
-    }
-
     void HighlightPieces(List<Piece> gamePieces)
     {
+        int goldGained = gamePieces.Count;
+        totalGoldGained += goldGained;
+        goldGainedText.text = totalGoldGained.ToString();
+        enemyCurrentHealth -= goldGained;
+        enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+        enemyHealthLeft.text = enemyCurrentHealth.ToString();
         foreach (Piece piece in gamePieces)
         {
             if (piece!=null)
             {
-                piece.anim.SetTrigger("shake");
                 ParticleSystem emitter = m_allTiles[piece.xIndex, piece.yIndex].emitter;
+                Color32 pieceColor = Color.white;
+                switch (piece.matchValue)
+                {
+                    case Piece.MatchValue.Yellow:
+                        pieceColor = new Color32(247, 212, 27, 255);
+                        break;
+                    case Piece.MatchValue.Blue:
+                        pieceColor = new Color32(64, 82, 127, 255);
+                        break;
+                    case Piece.MatchValue.Magenta:
+                        pieceColor = new Color32(181, 55, 137, 255);
+                        break;
+                    case Piece.MatchValue.Indigo:
+                        pieceColor = new Color32(44, 23, 71, 255);
+                        break;
+                    case Piece.MatchValue.Green:
+                        pieceColor = new Color32(16, 89, 90, 255);
+                        break;
+                    case Piece.MatchValue.Teal:
+                        pieceColor = new Color32(23, 159, 145, 255);
+                        break;
+                    case Piece.MatchValue.Red:
+                        pieceColor = new Color32(217, 51, 63, 255);
+                        break;
+                    case Piece.MatchValue.Cyan:
+                        pieceColor = new Color32(143, 212, 217, 255);
+                        break;
+                    case Piece.MatchValue.Wild:
+                        pieceColor = Color.white;
+                        break;
+                    default:
+                        pieceColor = Color.white;
+                        break;
+                }
+                var main = emitter.main;
+                main.startColor = new ParticleSystem.MinMaxGradient(pieceColor);
                 emitter.Play();
             }
         }
     }
 
-    private void HighlightMatchesAt(int x, int y)
-    {
-        List<Piece> combinedMatches = FindMatchesAt(x, y);
-        if (combinedMatches.Count > 0)
-        {
-            foreach (Piece piece in combinedMatches)
-            {
-                piece.anim.SetTrigger("shake");
-            }
-        }
-    }
 
     private List<Piece> FindMatchesAt(int i, int j, int minLength = 3)
     {
@@ -546,9 +594,7 @@ public class Board : MonoBehaviour {
         List<Piece> matches = new List<Piece>();
 
         HighlightPieces(gamePieces);
-        yield return new WaitForSeconds(1f);
-
-        bool isFinished = false;
+        yield return new WaitForSeconds(0.2f);
         ClearPieceAt(gamePieces);
         CollapseColumn(gamePieces);
         /*while (!isFinished)
