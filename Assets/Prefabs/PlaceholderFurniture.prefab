@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d90f10b7984924b813ce435caf94ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: MueblePlaceholder
+  Name: 
   description: Ejemplo de mueble
   purchased: 0
   image: {fileID: 0}
