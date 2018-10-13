@@ -11,6 +11,7 @@ public class StoreManager : MonoBehaviour {
     public List<GameObject> currentShopItems;
     public ItemType itemTypeFilter;
     public PlayerData avatarData;
+    
 	// Use this for initialization
 	void Start () {
         avatarData = SaveData.Load();
@@ -32,6 +33,11 @@ public class StoreManager : MonoBehaviour {
     public bool CanBuyWithCredit(int price)
     {
         return price <= PlayerAccountManager.instance.CreditAccount.AvailableCredit;
+    }
+
+    public void BuyWithCredit(Item item)
+    {
+        PlayerAccountManager.instance.BuyWithCredit(item);
     }
 
     public void ChangeFilter(bool currentValue)
