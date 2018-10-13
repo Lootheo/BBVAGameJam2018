@@ -20,6 +20,14 @@ public class ClickableCharacter:MonoBehaviour
     public void MoveCharacter(Vector3 positionToMove)
     {
         finalPosition = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
+        if (finalPosition.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
         //transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
     }
     public void Update()
