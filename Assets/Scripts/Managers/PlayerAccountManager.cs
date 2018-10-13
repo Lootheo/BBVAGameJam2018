@@ -17,9 +17,9 @@ public class PlayerAccountManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
         }
-        
+
+        CreditAccount = new CreditAccountState(0, DateTime.Now.ToString(), new Credit(0, 0));
         transactions = new List<Transaction>();
         WeeklyCreditState = new List<CreditAccountState>();
         
@@ -77,10 +77,5 @@ public class PlayerAccountManager : MonoBehaviour
     public void SetCreditAccount(int balance, string cutDate, Credit credit)
     {
         CreditAccount = new CreditAccountState(balance, cutDate, credit);
-    }
-
-    public void Update()
-    {
-
     }
 }
