@@ -13,6 +13,16 @@ public class CreditAccountState
     private Credit currentCredit;
     private List<Transaction> transactions;
 
+    public Credit CurrentCredit
+    {
+        get { return currentCredit; }
+    }
+
+    public int InterestRate
+    {
+        get { return currentCredit.InterestRate; }
+    }
+
     public int Balance
     {
         set
@@ -62,11 +72,12 @@ public class CreditAccountState
         transactions.Add(transaction);
         Balance += transaction.Amount;
     }
-
+    /*
     public void AddToBalance(int amount)
     {
         Balance -= amount;
-    }
+        AddTransaction(new Transaction("Payed amount " + amount, -amount, DateTime.))
+    }*/
 }
 
 [System.Serializable]
