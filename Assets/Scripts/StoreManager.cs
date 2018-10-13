@@ -44,13 +44,8 @@ public class StoreManager : MonoBehaviour {
         {
             GameObject itemInstance = Instantiate(shopEntryPrefab, scrollArea);
             ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
-            if (avatarData.avatarItems.Contains(item.itemID))
-            {
-                shopItem.itemBuyButton.interactable = false;
-                shopItem.itemText.color = Color.red;
-            }
-            shopItem.itemImage.sprite = item.itemGraphic;
-            shopItem.itemText.text = item.itemName;
+            shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
+            
             scrollArea.sizeDelta += new Vector2(320, 0);
             currentShopItems.Add(itemInstance);
             //Text itemText = shopItem.
