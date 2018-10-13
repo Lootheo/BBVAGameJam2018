@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToGenerate: 5
-  amountGenerated: 0
+  amountGenerated: 10
   assignedChargeBar: {fileID: 946241211}
   assignedBarOffset: 0
 --- !u!1 &437240882
