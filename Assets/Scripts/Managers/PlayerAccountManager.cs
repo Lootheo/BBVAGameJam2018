@@ -63,8 +63,7 @@ public class PlayerAccountManager : MonoBehaviour
             } // end for
             WeeklyCreditState[WeeklyCreditState.Count - 1] = CreditAccount;
         } // end else
-        Debug.LogError((CreditAccount.InterestRate * 0.1f));
-        Debug.LogError(CreditAccount.Balance * (CreditAccount.InterestRate * 0.01f));
+
         int newBalance = CreditAccount.Balance + (int)(CreditAccount.Balance * (CreditAccount.InterestRate * 0.01f));
         SetCreditAccount(newBalance, "en 24hrs", CreditAccount.CurrentCredit);
     }
