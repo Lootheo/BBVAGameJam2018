@@ -14,6 +14,7 @@ public class DragClass : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         this.itemData = itemData;
         m_DraggingIcon = sender;
+        icon.sprite = itemData.itemGraphic;
         canvas = parent;
     }
 
@@ -31,7 +32,7 @@ public class DragClass : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         image.sprite = icon.sprite;
         //image.SetNativeSize();
-        image.rectTransform.sizeDelta = icon.rectTransform.sizeDelta;
+        //image.rectTransform.sizeDelta = icon.rectTransform.sizeDelta;
 
         m_DraggingPlane = canvas.transform as RectTransform;
 
