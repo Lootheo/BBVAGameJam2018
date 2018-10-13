@@ -18,8 +18,8 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void BuyWithPoints(Item item)
     {
-        PlayerPoints -= item.price;
-        AddTransaction(new Transaction(item.name + " payed with points", item.price, DateTime.Now.ToString()));
+        PlayerPoints -= item.itemPrice;
+        AddTransaction(new Transaction(item.name + " payed with points", item.itemPrice, DateTime.Now.ToString()));
     }
 
     public void AddTransaction(Transaction transaction)
@@ -29,8 +29,8 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void BuyWithCredit(Item item)
     {
-        PlayerPoints = item.price;
-        Transaction transaction = new Transaction(item.name + " payed with credit", item.price, DateTime.Now.ToString());
+        PlayerPoints = item.itemPrice;
+        Transaction transaction = new Transaction(item.name + " payed with credit", item.itemPrice, DateTime.Now.ToString());
         AddTransaction(transaction);
         CreditAccount.AddTransaction(transaction);
     }
