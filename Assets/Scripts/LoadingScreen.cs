@@ -14,7 +14,7 @@ public class LoadingScreen : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("CharacterCreation");
         }
     }
 	
