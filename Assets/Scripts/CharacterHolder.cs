@@ -4,43 +4,62 @@ using UnityEngine;
 
 public class CharacterHolder : MonoBehaviour {
     public List<Item> legItems;
-    public SpriteRenderer legPivot;
-    public Item currentPants;
+    public List<Item> accesoryItems;
+    public List<Item> hairstyleItems;
+    public List<Item> chestItems;
+    public List<Item> feetItems;
+    
+    public List<Item> currentItems;
+    public List<SpriteRenderer> avatarSprites;
+    public int[] pieceIndexes = new int[5];
+    public int topIndex;
 	// Use this for initialization
 	void Start () {
-		
+        currentItems = new List<Item>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SetNewItem(legItems[1]);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            SetNewItem(legItems[0]);
-        }
-	}
 
-    void SetNewItem(Item newItem)
+    public void NextItemPiece(int piece)
     {
-        switch (newItem.itemType)
+        Item nextPiece = CheckIndex(piece);
+        avatarSprites[piece].transform.position = nextPiece.itemOffset;
+        avatarSprites[piece].sprite = nextPiece.itemGraphic;
+    }
+
+    Item CheckIndex(int piece)
+    {
+        int currentIndex = pieceIndexes[(int)piece];
+        List<Item> pieceList = new List<Item>();
+        switch ((ItemType)piece)
         {
             case ItemType.HairStyle:
+                pieceList = hairstyleItems;
                 break;
-            case ItemType.HeadAccesory:
+            case ItemType.Accesory:
+                pieceList = accesoryItems;
                 break;
             case ItemType.Chest:
+                pieceList = chestItems;
                 break;
             case ItemType.Legs:
-                legPivot.transform.position = newItem.itemOffset;
-                legPivot.sprite = newItem.itemGraphic;
+                pieceList = legItems;
                 break;
             case ItemType.Feet:
+                pieceList = feetItems;
                 break;
             default:
                 break;
         }
+        topIndex = pieceList.Count - 1;
+        if (currentIndex < topIndex)
+        {
+            currentIndex++;
+        }
+        else
+        {
+            currentIndex = 0;
+        }
+        pieceIndexes[(int)piece] = currentIndex;
+        return pieceList[currentIndex];
     }
 }

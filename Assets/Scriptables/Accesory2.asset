@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 217be181ee887d048a4c88a3e483d5ae, type: 3}
-  m_Name: Chest1_M
+  m_Name: Accesory2
   m_EditorClassIdentifier: 
-  itemName: Chest1_M
-  itemGraphic: {fileID: 21300032, guid: d5830767056f3ad40a2b17b3c75232e4, type: 3}
-  itemType: 2
-  itemOffset: {x: -0.28, y: 1.62}
+  itemName: Accesory2
+  itemGraphic: {fileID: 21300126, guid: d5830767056f3ad40a2b17b3c75232e4, type: 3}
+  itemType: 1
+  itemOffset: {x: 1.51, y: -0.74}
