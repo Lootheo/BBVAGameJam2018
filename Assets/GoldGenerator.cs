@@ -9,6 +9,7 @@ public class GoldGenerator : MonoBehaviour {
     private float currentTime=0;
     public Image assignedChargeBar;
     public float assignedBarOffset;
+    public Object particles;
 
     public void Update()
     {
@@ -22,6 +23,9 @@ public class GoldGenerator : MonoBehaviour {
             {
                 currentTime = 0;
                 FindObjectOfType<PlayerAccountManager>().Gold += amountGenerated;
+                Vector3 positionToInstantiate = new Vector3(transform.position.x, transform.position.y, -5f);
+                GameObject bills= Instantiate(particles, positionToInstantiate, Quaternion.identity) as GameObject;
+                bills.GetComponent<ParticleSystem>().Play();
             }
             assignedChargeBar.fillAmount = (float)currentTime / secondsToGenerate;
         }
