@@ -63,7 +63,10 @@ public class CreditAccountState
         Balance += transaction.Amount;
     }
 
-
+    public void AddToBalance(int amount)
+    {
+        Balance -= amount;
+    }
 }
 
 [System.Serializable]
