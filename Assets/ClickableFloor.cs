@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ClickableFloor : MonoBehaviour {
 
-
-
-
 	// Use this for initialization
 	void Start () {
 		

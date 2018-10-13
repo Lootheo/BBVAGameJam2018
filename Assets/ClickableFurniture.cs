@@ -7,6 +7,7 @@ public class ClickableFurniture : MonoBehaviour {
     //Furniture data
     public string Name;
     public string description;
+    public int price;
     public bool purchased;
     public Sprite image;
 

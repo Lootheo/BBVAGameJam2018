@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class MouseEvents : MonoBehaviour {
 
+    public TextMeshProUGUI nameText, descriptionText, priceText;
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButtonDown(0))
@@ -28,6 +29,9 @@ public class MouseEvents : MonoBehaviour {
         {
             Debug.Log(furniture.Name);
             Debug.Log(furniture.description);
+            nameText.text = furniture.name;
+            descriptionText.text = furniture.description;
+            priceText.text = furniture.price.ToString();
             if (furniture.purchased)
             {
                 Debug.Log("not purchased");

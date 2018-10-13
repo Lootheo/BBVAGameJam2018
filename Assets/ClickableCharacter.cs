@@ -9,11 +9,20 @@ public class ClickableCharacter:MonoBehaviour
     public string description;
     public int level;
     public Sprite image;
-
-
+    public Vector2 finalPosition;
+    public float characterSpeed = 1.0f;
+    public bool followingCharacter = false;
     public void MoveCharacter(Vector2 positionToMove)
     {
-        transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
+        finalPosition = positionToMove;
+        //transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
     }
-
+    public void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, finalPosition, Time.deltaTime*characterSpeed);
+        if (followingCharacter)
+        {
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        }
+    }
 }
