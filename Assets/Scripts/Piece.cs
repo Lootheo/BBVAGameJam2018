@@ -6,7 +6,6 @@ public class Piece : MonoBehaviour {
     public int xIndex;
     public int yIndex;
     Board m_board;
-    public Animator anim;
 
     bool m_isMoving = false;
     public InterpType interpolation = InterpType.SmoothStep;
