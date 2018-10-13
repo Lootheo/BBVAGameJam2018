@@ -29,7 +29,7 @@ public class MouseEvents : MonoBehaviour {
         {
             Debug.Log(furniture.Name);
             Debug.Log(furniture.description);
-            nameText.text = furniture.name;
+            nameText.text = furniture.Name;
             descriptionText.text = furniture.description;
             priceText.text = furniture.price.ToString();
             if (furniture.purchased)
