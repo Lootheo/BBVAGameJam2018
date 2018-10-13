@@ -8,11 +8,17 @@ public class CreditAccountState
     private int balance;
     private string cutDate;
 
+
     private int minPayment;
     private int availableCredit;
 
     private Credit currentCredit;
     private List<Transaction> transactions;
+
+    public string CutDate
+    {
+        get { return cutDate; }
+    }
 
     public Credit CurrentCredit
     {

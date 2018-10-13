@@ -50,7 +50,17 @@ public class MainMenu : MonoBehaviour {
         {
             holdedItems.Add(item.itemID);
         }
-        PlayerData newPlayer = new PlayerData(holdedItems, nameField.text);
+        CreditAccountData creditData = new CreditAccountData(
+            PlayerAccountManager.instance.CreditAccount.Balance,
+            PlayerAccountManager.instance.CreditAccount.CutDate,
+            PlayerAccountManager.instance.transactions);
+        PlayerAccountData data = new PlayerAccountData(
+            PlayerAccountManager.instance.Gold,
+            PlayerAccountManager.instance.CreditAccount.InterestRate,
+            PlayerAccountManager.instance.CreditAccount.AvailableCredit,
+            creditData);
+
+        PlayerData newPlayer = new PlayerData(holdedItems, nameField.text, data);
         SaveData.Save(newPlayer);
     }
 
