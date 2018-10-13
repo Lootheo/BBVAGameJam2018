@@ -10,6 +10,8 @@ public class ConstructionManager : MonoBehaviour {
     public List<GameObject> currentShopItems;
     public PlayerData avatarData;
     public List<Item> allItems;
+    public DataSender sender;
+    public Canvas dragCanvas;
     // Use this for initialization
     void Start()
     {
@@ -50,10 +52,9 @@ public class ConstructionManager : MonoBehaviour {
         foreach (Item item in shopItems)
         {
             GameObject itemInstance = Instantiate(shopEntryPrefab, scrollArea);
-            ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
-            shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
-
-            scrollArea.sizeDelta += new Vector2(0, 160);
+            DragBuild shopItem = itemInstance.GetComponent<DragBuild>();
+            shopItem.SetData(sender, dragCanvas, item);
+            scrollArea.sizeDelta += new Vector2(80, 0);
             currentShopItems.Add(itemInstance);
             //Text itemText = shopItem.
         }
@@ -66,6 +67,6 @@ public class ConstructionManager : MonoBehaviour {
             Destroy(item);
         }
         currentShopItems.Clear();
-        scrollArea.sizeDelta = new Vector2(scrollArea.sizeDelta.x, 0);
+        scrollArea.sizeDelta = new Vector2(0, scrollArea.sizeDelta.y);
     }
 }

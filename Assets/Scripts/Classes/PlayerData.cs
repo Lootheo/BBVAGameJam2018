@@ -21,7 +21,7 @@ public class PlayerData{
     public PlayerData(List<int> items, string name, PlayerAccountData _accountData)
     {
         avatarItems = items;
-        houseItems = new List<Furniture>();
+        houseItems = new List<Furniture>() { new Furniture(11, new Vector2(0,0), true), new Furniture(12, new Vector2(10,10), true)};
         purchasedItems = new List<int>();
         avatarName = name;
         accountData = _accountData;
@@ -32,8 +32,16 @@ public class PlayerData{
 public class Furniture
 {
     public int furnitureID;
-    public Vector2 roomPosition;
+    public float positionX, positionY;
     public bool displayed;
+
+    public Furniture(int id, Vector2 position, bool disp)
+    {
+        furnitureID = id;
+        positionX = position.x;
+        positionY = position.y;
+        displayed = disp;
+    }
 }
 
 [System.Serializable]
