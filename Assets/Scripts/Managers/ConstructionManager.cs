@@ -12,6 +12,7 @@ public class ConstructionManager : MonoBehaviour {
     public List<Item> allItems;
     public DataSender sender;
     public Canvas dragCanvas;
+    public GameObject furniturePrefab;
     // Use this for initialization
     void Start()
     {
@@ -68,5 +69,12 @@ public class ConstructionManager : MonoBehaviour {
         }
         currentShopItems.Clear();
         scrollArea.sizeDelta = new Vector2(0, scrollArea.sizeDelta.y);
+    }
+
+    public void BuildItemAtPosition(Item item, Vector3 pos)
+    {
+        GameObject itemInstance = Instantiate(furniturePrefab, pos, Quaternion.identity) as GameObject;
+        itemInstance.GetComponent<SpriteRenderer>().sprite = item.itemGraphic;
+        itemInstance.AddComponent<PolygonCollider2D>();
     }
 }

@@ -11,13 +11,13 @@ public class ClickableFurniture : ClickableItem {
     public Sprite image;
 	// Update is called once per frame
 	void Update () {
-        if (!purchased)
+        /*if (!purchased)
         {
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.3f);
         }
         else
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        }
+        }*/
     }
 }

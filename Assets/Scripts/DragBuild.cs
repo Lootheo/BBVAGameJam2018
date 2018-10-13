@@ -14,6 +14,9 @@ public class DragBuild : DragClass
 
     void BuildOnDragPoint(PointerEventData data)
     {
-        Debug.Log(data.position);
+        Camera main = Camera.main;
+        Vector2 worldPos = main.ScreenToWorldPoint(new Vector2(data.position.x, data.position.y));
+        Debug.Log(worldPos);
+        ConstructionManager.instance.BuildItemAtPosition(itemData, new Vector3(worldPos.x, worldPos.y, -5));
     }
 }

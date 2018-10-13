@@ -41,13 +41,6 @@ public class ClickableCharacter: ClickableItem
     }
     public void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, finalPosition, Time.deltaTime*characterSpeed);
-        if (followingCharacter)
-        {
-            if (transform.position.x > minX && transform.position.x < maxX)
-                Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
-            if (transform.position.y > minY && transform.position.y < maxY)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
-        }
+       
     }
 }
