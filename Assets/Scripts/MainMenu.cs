@@ -36,13 +36,6 @@ public class MainMenu : MonoBehaviour {
     // Use this for initialization
     void Start () {
         FillGrid(0);
-        PlayerData loadedPlayer = SaveData.Load();
-        foreach (int item in loadedPlayer.avatarItems)
-        {
-            Item loadedItem = starterItems.Find(x => x.itemID == item);
-            holder.SetItemPiece(loadedItem);
-        }
-        nameField.text = loadedPlayer.avatarName;
 	}
 	
 	// Update is called once per frame
