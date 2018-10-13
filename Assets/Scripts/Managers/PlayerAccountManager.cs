@@ -14,7 +14,12 @@ public class PlayerAccountManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        
         transactions = new List<Transaction>();
         WeeklyCreditState = new List<CreditAccountState>();
         
@@ -76,6 +81,6 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void Update()
     {
-        PlayerPointsText.text = Gold.ToString();
+
     }
 }
