@@ -10,4 +10,10 @@ public class ClickableCharacter:MonoBehaviour
     public int level;
     public Sprite image;
 
+
+    public void MoveCharacter(Vector2 positionToMove)
+    {
+        transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
+    }
+
 }

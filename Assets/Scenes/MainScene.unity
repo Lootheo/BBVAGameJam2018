@@ -113,6 +113,160 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &479883116
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.4698038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.88277084
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.9144636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.9144636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.9144636
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: name
+      value: Mesa de billar
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: description
+      value: Genera mas dinero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 56.043003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424395052621152, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_Name
+      value: PlaceholderFurniture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212293227901074452, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &623393269
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.4837476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8752076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: name
+      value: Mesa de billar
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: description
+      value: Genera mas dinero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -57.861004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424395052621152, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_Name
+      value: PlaceholderFurniture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212293227901074452, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &723713037
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,19 +363,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.4837476
       objectReference: {fileID: 0}
     - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8752076
       objectReference: {fileID: 0}
     - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
       propertyPath: m_RootOrder
@@ -248,6 +402,15 @@ Prefab:
         type: 2}
       propertyPath: description
       value: Genera mas dinero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -57.861004
+      objectReference: {fileID: 0}
+    - target: {fileID: 212293227901074452, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.14509805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
@@ -341,6 +504,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae3d594478a2f24c9e4004be65a17d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1540329545
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.4837476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8752076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: name
+      value: Mesa de billar
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: description
+      value: Genera mas dinero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -57.861004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424395052621152, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_Name
+      value: PlaceholderFurniture (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212293227901074452, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1623815278
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +678,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -53.714}
+--- !u!1001 &1739566014
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.4837476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8752076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.4548812
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: name
+      value: Mesa de billar
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474325074274896, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: description
+      value: Genera mas dinero
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761743174388206, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -57.861004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424395052621152, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+      propertyPath: m_Name
+      value: PlaceholderFurniture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212293227901074452, guid: a8193ba69d545234d84a4e6463d00ba8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8193ba69d545234d84a4e6463d00ba8, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1954419928
 GameObject:
   m_ObjectHideFlags: 0
