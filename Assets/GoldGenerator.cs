@@ -8,12 +8,14 @@ public class GoldGenerator : MonoBehaviour {
     public int amountGenerated;
     private float currentTime=0;
     public Image assignedChargeBar;
+    public float assignedBarOffset;
 
     public void Update()
     {
         if (GetComponent<ClickableFurniture>().purchased)
         {
             assignedChargeBar.transform.parent.gameObject.SetActive(true);
+            assignedChargeBar.transform.parent.position = transform.position +Vector3.up*assignedBarOffset;
             currentTime += Time.deltaTime;
 
             if (currentTime > secondsToGenerate)
@@ -22,6 +24,10 @@ public class GoldGenerator : MonoBehaviour {
                 FindObjectOfType<PlayerAccountManager>().Gold += amountGenerated;
             }
             assignedChargeBar.fillAmount = (float)currentTime / secondsToGenerate;
+        }
+        else
+        {
+            assignedChargeBar.transform.parent.gameObject.SetActive(false);
         }
        
     }
