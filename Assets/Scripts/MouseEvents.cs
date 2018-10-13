@@ -24,6 +24,7 @@ public class MouseEvents : MonoBehaviour {
         ClickableFurniture furniture = clickableHit.transform.GetComponent<ClickableFurniture>();
         ClickableCharacter character = clickableHit.transform.GetComponent<ClickableCharacter>();
         ClickableFloor floor = clickableHit.transform.GetComponent<ClickableFloor>();
+        DoorFurniture door = clickableHit.transform.GetComponent<DoorFurniture>();
 
         if (furniture)
         {
@@ -50,6 +51,9 @@ public class MouseEvents : MonoBehaviour {
         {
             Debug.Log("hitting floor");
             FindObjectOfType<ClickableCharacter>().MoveCharacter(clickableHit.point);
+        }else if (door)
+        {
+            door.Activate();
         }
 
 
