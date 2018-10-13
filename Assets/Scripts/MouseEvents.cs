@@ -9,24 +9,23 @@ public class MouseEvents : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit.collider != null)
             {
-                Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
                 ShowClickableInfo(hit);
             }
         }
     }
 
-    void ShowClickableInfo(RaycastHit clickableHit)
+    void ShowClickableInfo(RaycastHit2D clickableHit)
     {
-        ClickableFurniture furniture = clickableHit.transform.GetComponent<ClickableFurniture>();
-        ClickableCharacter character = clickableHit.transform.GetComponent<ClickableCharacter>();
-        ClickableFloor floor = clickableHit.transform.GetComponent<ClickableFloor>();
-        DoorFurniture door = clickableHit.transform.GetComponent<DoorFurniture>();
-
-        if (furniture)
+        ClickableItem clicked = clickableHit.transform.GetComponent<ClickableItem>();
+        if (clicked)
+        {
+            clicked.OnItemClick();
+        }
+        /*if (furniture)
         {
             Debug.Log(furniture.Name);
             Debug.Log(furniture.description);
@@ -54,10 +53,6 @@ public class MouseEvents : MonoBehaviour {
         }else if (door)
         {
             door.Activate();
-        }
-
-
+        }*/
     }
-
-    
 }

@@ -17,8 +17,8 @@ public class CharacterHolder : MonoBehaviour
 
     public void SetItemPiece(Item piece)
     {
-        avatarSprites[(int)piece.clothType].transform.localPosition = piece.itemOffset;
-        avatarSprites[(int)piece.clothType].sprite = piece.itemGraphic;
+        avatarSprites[(int)piece.clothType-1].transform.localPosition = piece.itemOffset;
+        avatarSprites[(int)piece.clothType-1].sprite = piece.itemGraphic;
         Item tempPiece = currentItems.Find(x => x.clothType == piece.clothType);
         if (tempPiece!=null)
         {

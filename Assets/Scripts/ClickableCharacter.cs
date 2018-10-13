@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickableCharacter:MonoBehaviour
+public class ClickableCharacter: ClickableItem
 {
     //Character data
     public string Name;
@@ -19,6 +19,13 @@ public class ClickableCharacter:MonoBehaviour
     {
         finalPosition = transform.position;
     }
+
+    public override void OnItemClick()
+    {
+        Debug.Log("Show concept menu");
+        RoomManager.GetInstance().ShowConceptualMenu(transform.position, true);
+    }
+
     public void MoveCharacter(Vector3 positionToMove)
     {
         finalPosition = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
