@@ -9,11 +9,6 @@ public class ClickableFurniture : MonoBehaviour {
     public int price;
     public bool purchased;
     public Sprite image;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (!purchased)
