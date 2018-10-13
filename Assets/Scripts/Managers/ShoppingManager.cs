@@ -13,7 +13,7 @@ public class ShoppingManager : MonoBehaviour {
 
     public bool CanBuyWithPoints(int price)
     {
-        return price <= PlayerAccountManager.instance.PlayerPoints;
+        return price <= PlayerAccountManager.instance.Gold;
     }
 
     public bool CanBuyWithCredit(int price)

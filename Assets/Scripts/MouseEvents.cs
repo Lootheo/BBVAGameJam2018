@@ -34,11 +34,11 @@ public class MouseEvents : MonoBehaviour {
             priceText.text = furniture.price.ToString();
             if (furniture.purchased)
             {
-                Debug.Log("not purchased");
+                Debug.Log("purchased");
             }
             else
             {
-                Debug.Log("This item is already purchased");
+                Debug.Log("not purchased");
             }
         }
         else if (character)

@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using TMPro;
 public class PlayerAccountManager : MonoBehaviour
 {
     public static PlayerAccountManager instance;
-    public int PlayerPoints;
+    public int Gold;
     public CreditAccountState CreditAccount;
     public List<Transaction> transactions;
     public List<CreditAccountState> WeeklyCreditState;
+    public TextMeshProUGUI PlayerPointsText;
 
     private void Awake()
     {
@@ -19,14 +20,14 @@ public class PlayerAccountManager : MonoBehaviour
         
     }
 
-    public void AddPlayerPoints(int points)
+    public void AddPlayerGold(int points)
     {
-        PlayerPoints += points;
+        Gold += points;
     }
 
-    public void BuyWithPoints(Item item)
+    public void BuyWithGold(Item item)
     {
-        PlayerPoints -= item.itemPrice;
+        Gold -= item.itemPrice;
         AddTransaction(new Transaction(item.name + " payed with points", item.itemPrice, DateTime.Now.ToString()));
     }
 
@@ -46,7 +47,7 @@ public class PlayerAccountManager : MonoBehaviour
     {
         Transaction transaction = new Transaction("Payed amount to credit " + playerPoints, -playerPoints, DateTime.Now.ToString());
         CreditAccount.AddTransaction(transaction);
-        PlayerPoints -= playerPoints;
+        Gold -= playerPoints;
     }
 
     public void MakeDailyCutoff()
@@ -71,5 +72,10 @@ public class PlayerAccountManager : MonoBehaviour
     public void SetCreditAccount(int balance, string cutDate, Credit credit)
     {
         CreditAccount = new CreditAccountState(balance, cutDate, credit);
+    }
+
+    public void Update()
+    {
+        PlayerPointsText.text = Gold.ToString();
     }
 }
