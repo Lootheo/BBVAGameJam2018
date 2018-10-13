@@ -9,11 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 212d172b2301c3a4584a93b48ef0a4cf, type: 3}
-  m_Name: Legs1_M
+  m_Name: Table1
   m_EditorClassIdentifier: 
-  itemID: 8
-  itemName: Legs1_M
-  itemGraphic: {fileID: 21300102, guid: d5830767056f3ad40a2b17b3c75232e4, type: 3}
-  itemType: 2
-  itemOffset: {x: -0.14, y: -1.31}
+  itemID: 10
+  itemName: Table1
+  itemGraphic: {fileID: 21300000, guid: 91376be05de1c7a4e8452fc70a3e4929, type: 3}
+  itemType: 1
+  clothType: 0
+  furnitureType: 1
+  itemOffset: {x: 0, y: 0}
   itemPrice: 0

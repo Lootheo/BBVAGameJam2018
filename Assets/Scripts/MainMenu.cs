@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        FillGrid(0);
+        FillGrid(1);
 	}
 	
 	// Update is called once per frame
@@ -74,7 +74,7 @@ public class MainMenu : MonoBehaviour {
     public void FillGrid(int itemType)
     {
         List<Item> filteredList = new List<Item>();
-        filteredList = starterItems.Where(x => x.itemType == (ItemType)itemType).ToList();
+        filteredList = starterItems.Where(x => x.clothType == (ClothType)itemType).ToList();
         FillShopItems(filteredList);
     }
 

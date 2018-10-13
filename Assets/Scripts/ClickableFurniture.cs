@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ClickableFurniture : MonoBehaviour {
+public class ClickableFurniture : ClickableItem {
 
     //Furniture data
     public string Name;

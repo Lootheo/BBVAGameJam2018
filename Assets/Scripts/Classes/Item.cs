@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public string itemName;
     public Sprite itemGraphic;
     public ItemType itemType;
+    public ClothType clothType;
+    public FurnitureType furnitureType;
     public Vector2 itemOffset;
     public int itemPrice;
 
@@ -26,6 +28,8 @@ public class Item : ScriptableObject
         itemName = _data.itemName;
         itemGraphic = _data.itemGraphic;
         itemType = _data.itemType;
+        clothType = _data.clothType;
+        furnitureType = _data.furnitureType;
         itemOffset = _data.itemOffset;
         itemPrice = _data.itemPrice;
     }

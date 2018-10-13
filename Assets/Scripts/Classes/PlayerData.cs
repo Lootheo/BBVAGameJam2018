@@ -4,6 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class PlayerData{
+    public List<int> purchasedItems;
+    public List<Furniture> houseItems;
     public List<int> avatarItems;
     public string avatarName;
     public PlayerAccountData accountData;
@@ -20,8 +22,14 @@ public class PlayerData{
         avatarName = name;
         accountData = _accountData;
     }
+}
 
-
+[System.Serializable]
+public class Furniture
+{
+    public int furnitureID;
+    public Vector2 roomPosition;
+    public bool displayed;
 }
 
 [System.Serializable]

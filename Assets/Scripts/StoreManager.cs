@@ -9,7 +9,7 @@ public class StoreManager : MonoBehaviour {
     public RectTransform scrollArea;
     public List<Item> allItems;
     public List<GameObject> currentShopItems;
-
+    public ItemType itemTypeFilter;
     public PlayerData avatarData;
 	// Use this for initialization
 	void Start () {
@@ -22,19 +22,45 @@ public class StoreManager : MonoBehaviour {
 		
 	}
 
+    public void ChangeFilter(bool currentValue)
+    {
+        switch (itemTypeFilter)
+        {
+            case ItemType.Cloth:
+                itemTypeFilter = ItemType.Furniture;
+                break;
+            case ItemType.Furniture:
+                itemTypeFilter = ItemType.Cloth;
+                break;
+            default:
+                break;
+        }
+        ShowItemsOfType(-1);
+    }
+
     public void ShowItemsOfType(int filter)
     {
         ClearShopObjects();
         List<Item> filteredList = new List<Item>();
         if (filter < 0)
         {
-            filteredList = allItems;
+            filteredList = allItems.Where(x => x.itemType == itemTypeFilter).ToList();
         }
-        else
+        else if (filter > 0)
         {
-            ItemType type = (ItemType)filter;
-            filteredList = allItems.Where(x => x.itemType == type).ToList();
+            switch (itemTypeFilter)
+            {
+                case ItemType.Cloth:
+                    filteredList = allItems.Where(x => x.clothType == (ClothType)filter).ToList();
+                    break;
+                case ItemType.Furniture:
+                    filteredList = allItems.Where(x => x.furnitureType == (FurnitureType)filter).ToList();
+                    break;
+                default:
+                    break;
+            }
         }
+        
         FillShopItems(filteredList);
     }
 
