@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClickableFurniture : MonoBehaviour {
 
     //Furniture data
-    public string name;
+    public string Name;
     public string description;
     public bool purchased;
     public Sprite image;
