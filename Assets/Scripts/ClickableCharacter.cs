@@ -9,6 +9,8 @@ public class ClickableCharacter:MonoBehaviour
     public string description;
     public int level;
     public Sprite image;
+    public float minX, maxX;
+    public float minY, maxY;
     [HideInInspector]
     public Vector3 finalPosition;
     public float characterSpeed = 1.0f;
@@ -35,8 +37,10 @@ public class ClickableCharacter:MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, finalPosition, Time.deltaTime*characterSpeed);
         if (followingCharacter)
         {
-            Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+            if (transform.position.x > minX && transform.position.x < maxX)
+                Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+            if (transform.position.y > minY && transform.position.y < maxY)
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
         }
     }
 }
