@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class ShopItem : MonoBehaviour {
     public Item itemToBuy;
     public Image itemImage;
     public Text itemText;
     public Text itemPrice;
     public Button itemBuyButton;
+    public TextMeshProUGUI canBuyText;
 
     public void SetData(Item setItem, bool alreadyOwned)
     {
@@ -20,6 +21,7 @@ public class ShopItem : MonoBehaviour {
         {
             itemBuyButton.interactable = false;
             itemText.color = Color.red;
+            canBuyText.gameObject.SetActive(false);
             itemPrice.gameObject.SetActive(false);
         }
     }
