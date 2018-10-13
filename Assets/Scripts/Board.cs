@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Board : MonoBehaviour {
     public int width;
     public int height;
-
+    public int turnsLeft = 10;
     public int borderSize;
 
     public GameObject tilePrefab;
 
     public GameObject[] piecePrefabs;
-
+    public GameObject victoryVignette;
     public float swapTime = 0.2f;
 
-    public Text goldGainedText, enemyHealthLeft;
+    public Text goldGainedText, enemyHealthLeft,turnsLeftText;
     public Image enemyHealthBar;
 
     public int totalGoldGained, enemyMaxHealth, enemyCurrentHealth;
@@ -27,20 +28,22 @@ public class Board : MonoBehaviour {
     TileClass m_clickedTile;
     TileClass m_targetTile;
     bool m_playerInputEnabled = true;
-
+    public PlayerData playerData;
 	// Use this for initialization
 	void Start ()
     {
+        playerData = SaveData.Load();
         m_allTiles = new TileClass[width, height];
         m_allPieces = new Piece[width, height];
         SetupTiles();
         SetupCamera();
         FillBoard(5, 1f);
         totalGoldGained = 0;
-        enemyMaxHealth = Random.Range(100, 400);
+        enemyMaxHealth = Random.Range(30, 50);
         enemyCurrentHealth = enemyMaxHealth;
         goldGainedText.text = totalGoldGained.ToString();
         enemyHealthLeft.text = enemyCurrentHealth.ToString();
+        turnsLeftText.text = turnsLeft.ToString();
         //HighlightMatches();
     }
 	
@@ -262,6 +265,7 @@ public class Board : MonoBehaviour {
 
     void SwitchTiles(TileClass clickedTile, TileClass targetTile)
     {
+        turnsLeft--;
         StartCoroutine(SwitchTilesRoutine(clickedTile, targetTile));
 
     }
@@ -291,6 +295,7 @@ public class Board : MonoBehaviour {
                 {
                     yield return new WaitForSeconds(swapTime);
                     ClearAndRefillBoard(clickedPieceMatches.Union(targetPieceMatches).ToList());
+                    turnsLeftText.text = turnsLeft.ToString();
                 }
 
             }
@@ -406,6 +411,7 @@ public class Board : MonoBehaviour {
         enemyCurrentHealth -= goldGained;
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
         enemyHealthLeft.text = enemyCurrentHealth.ToString();
+
         foreach (Piece piece in gamePieces)
         {
             if (piece!=null)
@@ -450,8 +456,28 @@ public class Board : MonoBehaviour {
                 emitter.Play();
             }
         }
-    }
 
+        if (enemyCurrentHealth <= 0 || turnsLeft <=0)
+        {
+            enemyCurrentHealth = 0;
+            enemyHealthBar.fillAmount = 0;
+            enemyHealthLeft.text = enemyCurrentHealth.ToString();
+            StartCoroutine(GainGoldAndLeave(goldGained));
+            Debug.Log("enemy defeated");
+        }
+    }
+    public IEnumerator GainGoldAndLeave(int goldGained)
+    {
+        
+        yield return new WaitForSeconds(3.0f);
+        foreach (Piece piece in m_allPieces)
+        {
+            piece.gameObject.SetActive(false);
+        }
+        victoryVignette.SetActive(true);
+        playerData.accountData.Gold = playerData.accountData.Gold + goldGained;
+        SceneManager.LoadScene(2);
+    }
 
     private List<Piece> FindMatchesAt(int i, int j, int minLength = 3)
     {
