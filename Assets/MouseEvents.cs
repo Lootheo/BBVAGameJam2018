@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class MouseEvents : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButtonDown(0))
@@ -18,15 +13,17 @@ public class MouseEvents : MonoBehaviour {
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
                 Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
-                ShowClickableInfo(hit.transform);
+                ShowClickableInfo(hit);
             }
         }
     }
 
-    void ShowClickableInfo(Transform clickableTransform)
+    void ShowClickableInfo(RaycastHit clickableHit)
     {
-        ClickableFurniture furniture = clickableTransform.GetComponent<ClickableFurniture>();
-        ClickableCharacter character = clickableTransform.GetComponent<ClickableCharacter>();
+        ClickableFurniture furniture = clickableHit.transform.GetComponent<ClickableFurniture>();
+        ClickableCharacter character = clickableHit.transform.GetComponent<ClickableCharacter>();
+        ClickableFloor floor = clickableHit.transform.GetComponent<ClickableFloor>();
+
         if (furniture)
         {
             Debug.Log(furniture.Name);
@@ -45,6 +42,12 @@ public class MouseEvents : MonoBehaviour {
             Debug.Log(character.name);
             Debug.Log(character.level);
 
+        }else if (floor)
+        {
+            Debug.Log("hitting floor");
+            Debug.Log(clickableHit.point);
         }
+
+
     }
 }

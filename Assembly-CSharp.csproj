@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ClickableCharacter.cs" />
+    <Compile Include="Assets\ClickableFloor.cs" />
     <Compile Include="Assets\ClickableFurniture.cs" />
     <Compile Include="Assets\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\CharacterHolder.cs" />
