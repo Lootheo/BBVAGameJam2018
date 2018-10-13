@@ -1,65 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Linq;
 
-public class CharacterHolder : MonoBehaviour {
-    public List<Item> legItems;
-    public List<Item> accesoryItems;
-    public List<Item> hairstyleItems;
-    public List<Item> chestItems;
-    public List<Item> feetItems;
-    
+public class CharacterHolder : MonoBehaviour
+{
     public List<Item> currentItems;
     public List<SpriteRenderer> avatarSprites;
-    public int[] pieceIndexes = new int[5];
-    public int topIndex;
+
 	// Use this for initialization
 	void Start () {
         currentItems = new List<Item>();
 	}
 	
 
-    public void NextItemPiece(int piece)
+    public void SetItemPiece(Item piece)
     {
-        Item nextPiece = CheckIndex(piece);
-        avatarSprites[piece].transform.position = nextPiece.itemOffset;
-        avatarSprites[piece].sprite = nextPiece.itemGraphic;
-    }
-
-    Item CheckIndex(int piece)
-    {
-        int currentIndex = pieceIndexes[(int)piece];
-        List<Item> pieceList = new List<Item>();
-        switch ((ItemType)piece)
+        avatarSprites[(int)piece.itemType].transform.localPosition = piece.itemOffset;
+        avatarSprites[(int)piece.itemType].sprite = piece.itemGraphic;
+        Item tempPiece = currentItems.Find(x => x.itemType == piece.itemType);
+        if (tempPiece!=null)
         {
-            case ItemType.HairStyle:
-                pieceList = hairstyleItems;
-                break;
-            case ItemType.Accesory:
-                pieceList = accesoryItems;
-                break;
-            case ItemType.Chest:
-                pieceList = chestItems;
-                break;
-            case ItemType.Legs:
-                pieceList = legItems;
-                break;
-            case ItemType.Feet:
-                pieceList = feetItems;
-                break;
-            default:
-                break;
+            currentItems.Remove(tempPiece);
         }
-        topIndex = pieceList.Count - 1;
-        if (currentIndex < topIndex)
-        {
-            currentIndex++;
-        }
-        else
-        {
-            currentIndex = 0;
-        }
-        pieceIndexes[(int)piece] = currentIndex;
-        return pieceList[currentIndex];
+        currentItems.Add(piece);
     }
 }
