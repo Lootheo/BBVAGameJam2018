@@ -49,7 +49,6 @@ public class MouseEvents : MonoBehaviour {
         }else if (floor)
         {
             Debug.Log("hitting floor");
-            Debug.Log(clickableHit.point);
             FindObjectOfType<ClickableCharacter>().MoveCharacter(clickableHit.point);
         }
 

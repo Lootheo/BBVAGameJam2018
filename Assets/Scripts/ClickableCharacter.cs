@@ -9,12 +9,17 @@ public class ClickableCharacter:MonoBehaviour
     public string description;
     public int level;
     public Sprite image;
-    public Vector2 finalPosition;
+    [HideInInspector]
+    public Vector3 finalPosition;
     public float characterSpeed = 1.0f;
     public bool followingCharacter = false;
-    public void MoveCharacter(Vector2 positionToMove)
+    public void Awake()
     {
-        finalPosition = positionToMove;
+        finalPosition = transform.position;
+    }
+    public void MoveCharacter(Vector3 positionToMove)
+    {
+        finalPosition = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
         //transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
     }
     public void Update()
@@ -22,7 +27,8 @@ public class ClickableCharacter:MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, finalPosition, Time.deltaTime*characterSpeed);
         if (followingCharacter)
         {
-            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+            Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
         }
     }
 }
