@@ -21,7 +21,7 @@ public class PlayerData{
     public PlayerData(List<int> items, string name, PlayerAccountData _accountData)
     {
         avatarItems = items;
-        houseItems = new List<Furniture>() { new Furniture(11, new Vector2(0,0), true), new Furniture(12, new Vector2(10,10), true)};
+        houseItems = new List<Furniture>();
         purchasedItems = new List<int>();
         avatarName = name;
         accountData = _accountData;

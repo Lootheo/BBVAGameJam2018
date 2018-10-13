@@ -20,4 +20,9 @@ public class ClickableFurniture : ClickableItem {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }*/
     }
+
+    public override void OnItemClick()
+    {
+        base.OnItemClick();
+    }
 }

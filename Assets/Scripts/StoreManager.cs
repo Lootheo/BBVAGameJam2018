@@ -11,9 +11,10 @@ public class StoreManager : MonoBehaviour {
     public List<GameObject> currentShopItems;
     public ItemType itemTypeFilter;
     public PlayerData avatarData;
-    
-	// Use this for initialization
-	void Start () {
+    public UI_Dialog confirmationDialog;
+
+    // Use this for initialization
+    void Start () {
         avatarData = SaveData.Load();
         ShowItemsOfType(-1);
 	}
@@ -37,6 +38,9 @@ public class StoreManager : MonoBehaviour {
 
     public void BuyWithCredit(Item item)
     {
+        avatarData.purchasedItems.Add(item.itemID);
+        avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
+        SaveData.Save(avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
     }
 
@@ -89,7 +93,7 @@ public class StoreManager : MonoBehaviour {
             GameObject itemInstance = Instantiate(shopEntryPrefab, scrollArea);
             ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
             shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
-            
+            shopItem.itemBuyButton.onClick.AddListener(() => CheckMoneyToBuy(shopItem.itemToBuy));
             scrollArea.sizeDelta += new Vector2(0, 160);
             currentShopItems.Add(itemInstance);
             //Text itemText = shopItem.
@@ -104,5 +108,38 @@ public class StoreManager : MonoBehaviour {
         }
         currentShopItems.Clear();
         scrollArea.sizeDelta = new Vector2(scrollArea.sizeDelta.x, 0);
+    }
+
+    public void CheckMoneyToBuy(Item item)
+    {
+        if (CanBuyWithPoints(item.itemPrice))
+        {
+            OpenBuyConfirmationWindow(item);
+        }
+        else
+        {
+            OpenDeniedShopingWindow(item);
+        }
+    }
+
+    public void OpenBuyConfirmationWindow(Item item)
+    {
+        confirmationDialog.gameObject.SetActive(true);
+        confirmationDialog.warningText.text = "El objeto " + item.name + " tiene un costo de " + item.itemPrice + ".00MX y tienes un credito disponible de"
+            + PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Presiona Aceptar para confirmar la compra.";
+        confirmationDialog.confirmButton.onClick.AddListener(() => BuyWithCredit(item));
+    }
+
+    public void OpenDeniedShopingWindow(Item item)
+    {
+        confirmationDialog.gameObject.SetActive(true);
+        confirmationDialog.warningText.text = "No tienes suficiente credito para comprar el objeto " + item.name + ". Credito disponible: " +
+            PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Te sugerimos saldar tu cuenta para comprar este objeto.";
+        confirmationDialog.confirmButton.onClick.AddListener(CloseWindow);
+    }
+
+    public void CloseWindow()
+    {
+        confirmationDialog.gameObject.SetActive(false);
     }
 }
