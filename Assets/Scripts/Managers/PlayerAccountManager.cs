@@ -25,6 +25,12 @@ public class PlayerAccountManager : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (PlayerPointsText)
+            PlayerPointsText.text = Gold.ToString() + ".00MX";
+    }
+
     public void AddPlayerGold(int points)
     {
         Gold += points;
