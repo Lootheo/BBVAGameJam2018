@@ -16,6 +16,7 @@ public class PlayerAccountManager : MonoBehaviour
         instance = this;
         transactions = new List<Transaction>();
         WeeklyCreditState = new List<CreditAccountState>();
+        
     }
 
     public void AddPlayerPoints(int points)
@@ -36,7 +37,6 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void BuyWithCredit(Item item)
     {
-        PlayerPoints = item.itemPrice;
         Transaction transaction = new Transaction(item.name + " payed with credit", item.itemPrice, DateTime.Now.ToString());
         AddTransaction(transaction);
         CreditAccount.AddTransaction(transaction);
@@ -63,8 +63,9 @@ public class PlayerAccountManager : MonoBehaviour
             } // end for
             WeeklyCreditState[WeeklyCreditState.Count - 1] = CreditAccount;
         } // end else
-
-        int newBalance = CreditAccount.Balance + (CreditAccount.Balance * CreditAccount.InterestRate);
+        Debug.LogError((CreditAccount.InterestRate * 0.1f));
+        Debug.LogError(CreditAccount.Balance * (CreditAccount.InterestRate * 0.01f));
+        int newBalance = CreditAccount.Balance + (int)(CreditAccount.Balance * (CreditAccount.InterestRate * 0.01f));
         SetCreditAccount(newBalance, "en 24hrs", CreditAccount.CurrentCredit);
     }
 
