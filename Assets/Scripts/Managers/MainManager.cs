@@ -12,7 +12,7 @@ public class MainManager : MonoBehaviour {
         DateTime cutDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
         PlayerData data = SaveData.Load();
         Credit credit;
-        if (data.accountData.InterestRate != 0)
+        /*if (data.accountData.InterestRate != 0)
             credit = new Credit(data.accountData.InterestRate, data.accountData.CreditLimit);
         else
             credit = new Credit(10, 1000);
@@ -23,6 +23,6 @@ public class MainManager : MonoBehaviour {
         }
         
         PlayerAccountManager.instance.SetCreditAccount(data.accountData.data.Balance, cutDateTime.ToString(), credit);
-        PlayerAccountManager.instance.AddPlayerGold(data.accountData.Gold);
+        PlayerAccountManager.instance.AddPlayerGold(data.accountData.Gold);*/
     }
 }

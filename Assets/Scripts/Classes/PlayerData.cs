@@ -13,12 +13,16 @@ public class PlayerData{
     public PlayerData()
     {
         avatarItems = new List<int>();
+        houseItems = new List<Furniture>();
+        purchasedItems = new List<int>();
         avatarName = "";
     }
 
     public PlayerData(List<int> items, string name, PlayerAccountData _accountData)
     {
         avatarItems = items;
+        houseItems = new List<Furniture>();
+        purchasedItems = new List<int>();
         avatarName = name;
         accountData = _accountData;
     }
