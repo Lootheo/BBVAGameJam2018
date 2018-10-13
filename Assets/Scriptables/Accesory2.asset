@@ -8,10 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217be181ee887d048a4c88a3e483d5ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 212d172b2301c3a4584a93b48ef0a4cf, type: 3}
   m_Name: Accesory2
   m_EditorClassIdentifier: 
+  itemID: 2
   itemName: Accesory2
   itemGraphic: {fileID: 21300126, guid: d5830767056f3ad40a2b17b3c75232e4, type: 3}
-  itemType: 1
-  itemOffset: {x: 1.51, y: -0.74}
+  itemType: 4
+  itemOffset: {x: 1.55, y: -0.77}
+  itemPrice: 0

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopItem : MonoBehaviour {
-    public Image itemImage;
-    public Text itemText;
+public class DataSender : MonoBehaviour {
+    public int dataToSend;
+    public Image iconHolder;
 }
-

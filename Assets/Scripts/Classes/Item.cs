@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+
 [CreateAssetMenu]
+[System.Serializable]
 public class Item : ScriptableObject
 {
+    public int itemID;
     public string itemName;
     public Sprite itemGraphic;
     public ItemType itemType;
@@ -20,6 +22,7 @@ public class Item : ScriptableObject
 
     public Item(Item _data)
     {
+        itemID = _data.itemID;
         itemName = _data.itemName;
         itemGraphic = _data.itemGraphic;
         itemType = _data.itemType;
