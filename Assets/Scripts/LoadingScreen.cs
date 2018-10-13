@@ -10,7 +10,7 @@ public class LoadingScreen : MonoBehaviour {
         PlayerData loadedPlayer = SaveData.Load();
         if (loadedPlayer.avatarName != "")
         {
-            SceneManager.LoadScene("CharacterCreation");
+            SceneManager.LoadScene("MainScene");
         }
         else
         {
