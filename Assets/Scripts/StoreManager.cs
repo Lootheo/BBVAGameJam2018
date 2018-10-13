@@ -16,11 +16,23 @@ public class StoreManager : MonoBehaviour {
         avatarData = SaveData.Load();
         ShowItemsOfType(-1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public static StoreManager instance;
+    // Use this for initialization
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public bool CanBuyWithPoints(int price)
+    {
+        return price <= PlayerAccountManager.instance.Gold;
+    }
+
+    public bool CanBuyWithCredit(int price)
+    {
+        return price <= PlayerAccountManager.instance.CreditAccount.AvailableCredit;
+    }
 
     public void ChangeFilter(bool currentValue)
     {
@@ -72,7 +84,7 @@ public class StoreManager : MonoBehaviour {
             ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
             shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
             
-            scrollArea.sizeDelta += new Vector2(320, 0);
+            scrollArea.sizeDelta += new Vector2(0, 160);
             currentShopItems.Add(itemInstance);
             //Text itemText = shopItem.
         }
@@ -85,6 +97,6 @@ public class StoreManager : MonoBehaviour {
             Destroy(item);
         }
         currentShopItems.Clear();
-        scrollArea.sizeDelta = new Vector2(0, scrollArea.sizeDelta.y);
+        scrollArea.sizeDelta = new Vector2(scrollArea.sizeDelta.x, 0);
     }
 }
