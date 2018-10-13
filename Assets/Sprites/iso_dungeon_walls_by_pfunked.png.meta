@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: c129bd97a912e064a99691d78d02b99d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: iso_dungeon_walls_by_pfunked_0
+    21300002: iso_dungeon_walls_by_pfunked_1
+    21300004: iso_dungeon_walls_by_pfunked_2
+    21300006: iso_dungeon_walls_by_pfunked_3
+    21300008: iso_dungeon_walls_by_pfunked_4
+    21300010: iso_dungeon_walls_by_pfunked_5
+    21300012: iso_dungeon_walls_by_pfunked_6
+    21300014: iso_dungeon_walls_by_pfunked_7
+    21300016: iso_dungeon_walls_by_pfunked_8
+    21300018: iso_dungeon_walls_by_pfunked_9
+    21300020: iso_dungeon_walls_by_pfunked_10
+    21300022: iso_dungeon_walls_by_pfunked_11
+    21300024: iso_dungeon_walls_by_pfunked_12
+    21300026: iso_dungeon_walls_by_pfunked_13
+    21300028: iso_dungeon_walls_by_pfunked_14
+    21300030: iso_dungeon_walls_by_pfunked_15
+    21300032: iso_dungeon_walls_by_pfunked_16
+    21300034: iso_dungeon_walls_by_pfunked_17
+    21300036: iso_dungeon_walls_by_pfunked_18
+    21300038: iso_dungeon_walls_by_pfunked_19
+    21300040: iso_dungeon_walls_by_pfunked_20
+    21300042: iso_dungeon_walls_by_pfunked_21
+    21300044: iso_dungeon_walls_by_pfunked_22
+    21300046: iso_dungeon_walls_by_pfunked_23
+    21300048: iso_dungeon_walls_by_pfunked_24
+    21300050: iso_dungeon_walls_by_pfunked_25
+    21300052: iso_dungeon_walls_by_pfunked_26
+    21300054: iso_dungeon_walls_by_pfunked_27
+    21300056: iso_dungeon_walls_by_pfunked_28
+    21300058: iso_dungeon_walls_by_pfunked_29
+    21300060: iso_dungeon_walls_by_pfunked_30
+    21300062: iso_dungeon_walls_by_pfunked_31
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 400
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcecf87d70ad2de47b8986721abf171c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 402
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429ab448872f9ea4cb20a1f2f9868ff6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 398
+        width: 63
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78d8732de57c5d4d969229671422a44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 398
+        width: 65
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4eb3f59fb825884eac3e5d4e8104512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_4
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 400
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84380a68f65cf64b89bbf464e9f1313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_5
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 402
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809c0d5f2ab2bf5438da0ae8aef12899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_6
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 398
+        width: 63
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80ad1ea157bffe49a22aefb7034332f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_7
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 398
+        width: 65
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6768ca4882b154dbb76c33caaead5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 272
+        width: 44
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cbad7f41c74b843bc50884920d533b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 285
+        width: 56
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be86e842ce33a146bbf20340b491553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_10
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 274
+        width: 43
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005f7ae9e87abd544ab3390cfb6e5785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 270
+        width: 58
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17e792f6ba940841919b1bbbe3721b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_12
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 270
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51e5014e2e085d47934191ae828c4c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_13
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 272
+        width: 70
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdb4649fa8f03e49ad03f67a380da2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_14
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 270
+        width: 63
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53577e1752e4d24b8f58dff72be08c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_15
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 270
+        width: 70
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b8c3607587c1e43bacc5a2f4a20f3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 144
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b607a28cb78fb64e8b084f87b4a2386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 146
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e896ef8b3e65f488ead45fda2330fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_18
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 144
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4c15e2b9bd617499840bcca7fe22c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_19
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 146
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956035793106d6c4ab422c8f7ce7b3d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_20
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 144
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b0d1c9232d28a459d9d49aeb4e21a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_21
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 146
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0fcdb68fa150f43aa917c345a81dce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_22
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 144
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f27e1ae90dd2b4eb60c705a088076f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_23
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 146
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407d5efb297107d49950aa94c4ab4335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_24
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 17
+        width: 63
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62e468b3973a524f83e0060cd1479fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_25
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 18
+        width: 63
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ea8c448706085488ccbf607cc0b31d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_26
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e288a95b56177a47b7333a0109fcf79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_27
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43ff8d27ccdc3744b574c9447bcfd91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_28
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a312cf8b0ecec4a825eda9a0f55622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_29
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367826434c0ed664ba8d941efdd8305a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_30
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c6835e71d8a2f4fb00f6ff89407aa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iso_dungeon_walls_by_pfunked_31
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 16
+        width: 67
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48827861518c7b4459407eebd9a79734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a3a1a055551e5224ba86f8b334951203
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
