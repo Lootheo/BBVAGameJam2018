@@ -1,5 +1,5 @@
 Library/
 Temp/
 .vs/
-Assets/Plugins
-Assets/Firebase
+Assets/Plugins/
+Assets/Firebase/
