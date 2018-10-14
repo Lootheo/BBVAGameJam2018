@@ -55,6 +55,14 @@ public class PlayerAccountManager : MonoBehaviour
             playerCreditText.text = CreditAccount.Balance.ToString() + ".00MX";
     }
 
+    public void AskEffectiveCredit(int amount)
+    {
+        Transaction transaction = new Transaction( "Prestamo", amount, DateTime.Now.ToString());
+        AddTransaction(transaction);
+        CreditAccount.AddTransaction(transaction);
+        Gold += amount;
+    }
+
     public void AddPlayerGold(int points)
     {
         Gold += points;
@@ -63,7 +71,7 @@ public class PlayerAccountManager : MonoBehaviour
     public void BuyWithGold(Item item)
     {
         Gold -= item.itemPrice;
-        AddTransaction(new Transaction(item.name + " payed with points", item.itemPrice, DateTime.Now.ToString()));
+        AddTransaction(new Transaction(item.name + " pagado en efectivo ", item.itemPrice, DateTime.Now.ToString()));
     }
 
     public void AddTransaction(Transaction transaction)
@@ -73,7 +81,7 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void BuyWithCredit(Item item)
     {
-        Transaction transaction = new Transaction(item.name + " payed with credit", item.itemPrice, DateTime.Now.ToString());
+        Transaction transaction = new Transaction(item.name + " pagado con credito ", item.itemPrice, DateTime.Now.ToString());
         AddTransaction(transaction);
         CreditAccount.AddTransaction(transaction);
     }

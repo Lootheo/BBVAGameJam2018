@@ -77,7 +77,7 @@ public class CreditAccountState
     public void AddTransaction(Transaction transaction)
     {
         transactions.Add(transaction);
-        Balance += transaction.Amount;
+        Balance += transaction.Amount + (int)(transaction.Amount * (InterestRate * 0.01f));
     }
     /*
     public void AddToBalance(int amount)
