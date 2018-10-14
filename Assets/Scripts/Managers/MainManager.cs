@@ -14,7 +14,7 @@ public class MainManager : MonoBehaviour {
         PlayerAccountManager.instance.SetAccountData();
         if(PlayerAccountManager.instance.CreditAccount.InterestRate == 0)
         {
-            Debug.LogError("ofrecer credito");
+            //Debug.LogError("ofrecer credito");
         }
         /*
         DateTime cutDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
