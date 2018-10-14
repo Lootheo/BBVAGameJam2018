@@ -34,5 +34,6 @@ public class RoomManager : MonoBehaviour {
     {
         conceptualUI.transform.position = playerPos;
         conceptualUI.SetActive(show);
+        conceptualUI.GetComponent<Animator>().SetBool("showMenu", show);
     }
 }
