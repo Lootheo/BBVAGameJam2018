@@ -55,6 +55,8 @@ public class DragBuild : DragClass
             }
         }
 
+
+        FindObjectOfType<ClickableCharacter>().GetComponent<BoxCollider2D>().enabled = true;
         FindObjectOfType<ClickableCharacter>().followingCharacter = true;
         FindObjectOfType<ClickableCharacter>().canMove = true;
     }
