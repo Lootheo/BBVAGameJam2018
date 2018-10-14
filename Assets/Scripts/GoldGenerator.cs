@@ -13,6 +13,7 @@ public class GoldGenerator : MonoBehaviour {
 
     private void Start()
     {
+        secondsToGenerate = Random.Range(3, 7);
         FindObjectOfType<ConstructionManager>().goldGenerators.Add(this.gameObject);
     }
     public void Update()
