@@ -49,6 +49,7 @@ public class MainMenu : MonoBehaviour {
         foreach (Item item in holder.currentItems)
         {
             holdedItems.Add(item.itemID);
+
         }
         if(PlayerAccountManager.instance)
         {

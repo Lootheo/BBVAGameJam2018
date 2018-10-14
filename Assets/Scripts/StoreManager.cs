@@ -37,9 +37,13 @@ public class StoreManager : MonoBehaviour {
     public void BuyWithCredit(Item item)
     {
         rm.avatarData.purchasedItems.Add(item.itemID);
-        rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
+        if (item.itemType == ItemType.Furniture)
+        {
+            rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
+        }
         SaveData.Save(rm.avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
+        confirmationDialog.gameObject.SetActive(false);
     }
 
     public void ChangeFilter(bool currentValue)
@@ -110,7 +114,7 @@ public class StoreManager : MonoBehaviour {
 
     public void CheckMoneyToBuy(Item item)
     {
-        if (CanBuyWithPoints(item.itemPrice))
+        if (CanBuyWithCredit(item.itemPrice))
         {
             OpenBuyConfirmationWindow(item);
         }

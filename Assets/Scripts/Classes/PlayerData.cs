@@ -22,7 +22,7 @@ public class PlayerData{
     {
         avatarItems = items;
         houseItems = new List<Furniture>();
-        purchasedItems = new List<int>();
+        purchasedItems = items;
         avatarName = name;
         accountData = _accountData;
     }
