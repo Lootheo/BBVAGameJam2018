@@ -58,10 +58,4 @@ public class UI_PromoDialog : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    private void OnDisable()
-    {
-        RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
-        SaveData.Save(RoomManager.GetInstance().avatarData);
-    }
-
 }
