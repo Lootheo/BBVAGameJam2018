@@ -82,7 +82,9 @@ public class ConstructionManager : MonoBehaviour {
         int dex = rm.avatarData.houseItems.IndexOf(furniture);
         rm.avatarData.houseItems[dex].displayed = true;
         rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        
         SaveData.Save(rm.avatarData);
+        GameObject.FindObjectOfType<FinalFirebaseConnection>().WriteNewUserData(rm.avatarData.avatarName, new ServerData(rm.avatarData));
     }
 
     void ClearShopObjects()
@@ -123,5 +125,6 @@ public class ConstructionManager : MonoBehaviour {
         ShowItemsOfType();
         rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(rm.avatarData);
+        GameObject.FindObjectOfType<FinalFirebaseConnection>().WriteNewUserData(rm.avatarData.avatarName, new ServerData(rm.avatarData));
     }
 }

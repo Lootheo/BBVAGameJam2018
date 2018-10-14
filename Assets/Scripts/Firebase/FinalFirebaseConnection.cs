@@ -50,7 +50,7 @@ public class FinalFirebaseConnection : MonoBehaviour {
         string json = JsonUtility.ToJson(data);
         //Debug.Log(json);
         reference.Child("users").Child(userId).SetRawJsonValueAsync(json);
-        GetPlayerBases();
+        //GetPlayerBases();
     }
 
     void HandleChildAdded(object sender, ChildChangedEventArgs args)
