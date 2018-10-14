@@ -28,6 +28,7 @@ public class GoldGenerator : MonoBehaviour {
                 Vector3 positionToInstantiate = new Vector3(transform.position.x, transform.position.y, -9f);
                 GameObject bills= Instantiate(particles, positionToInstantiate, Quaternion.identity) as GameObject;
                 bills.GetComponent<ParticleSystem>().Play();
+                
             }
             assignedChargeBar.fillAmount = (float)currentTime / secondsToGenerate;
     }
