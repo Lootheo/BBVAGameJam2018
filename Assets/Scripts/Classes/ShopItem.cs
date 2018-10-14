@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour {
     {
         itemToBuy = setItem;
         itemImage.sprite = itemToBuy.itemGraphic;
-        itemText.text = itemToBuy.itemName;
+        itemText.text = setItem.itemName;
         itemPrice.text = "$" + itemToBuy.itemPrice.ToString();
         if (alreadyOwned)
         {

@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToGenerate: 5
-  amountGenerated: 10
+  amountGenerated: 100
   assignedChargeBar: {fileID: 114331482236420948}
   assignedBarOffset: 0
   particles: {fileID: 1859810951129804, guid: 936967cba6023794ab3de25b2a817871, type: 2}

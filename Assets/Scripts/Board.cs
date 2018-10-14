@@ -29,6 +29,7 @@ public class Board : MonoBehaviour {
     TileClass m_targetTile;
     bool m_playerInputEnabled = true;
     public PlayerData playerData;
+    public AudioSource dingSound;
 	// Use this for initialization
 	void Start ()
     {
@@ -450,9 +451,10 @@ public class Board : MonoBehaviour {
                 var main = emitter.main;
                 main.startColor = new ParticleSystem.MinMaxGradient(pieceColor);
                 emitter.Play();
+                
             }
         }
-
+        dingSound.Play();
         if (totalGoldGained >= maxGoldGained || turnsLeft <=0)
         {
             totalGoldGained = maxGoldGained;
