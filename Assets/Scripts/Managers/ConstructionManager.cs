@@ -81,6 +81,7 @@ public class ConstructionManager : MonoBehaviour {
         furniture.displayed = true;
         int dex = rm.avatarData.houseItems.IndexOf(furniture);
         rm.avatarData.houseItems[dex].displayed = true;
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(rm.avatarData);
     }
 
@@ -120,6 +121,7 @@ public class ConstructionManager : MonoBehaviour {
         rm.avatarData.houseItems[dex].positionX = pos.x;
         rm.avatarData.houseItems[dex].positionY = pos.y;
         ShowItemsOfType();
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(rm.avatarData);
     }
 }
