@@ -18,4 +18,5 @@ MonoBehaviour:
   clothType: 6
   furnitureType: 0
   itemOffset: {x: -0.49, y: -7.42}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Como en risky business

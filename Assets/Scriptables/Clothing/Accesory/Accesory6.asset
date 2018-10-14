@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Accesory6
   m_EditorClassIdentifier: 
   itemID: 6
-  itemName: 
+  itemName: Lentes de Sol
   itemGraphic: {fileID: 21300000, guid: 647aacf64d2597e498036ad1b4b0c917, type: 3}
   itemType: 0
   clothType: 7
   furnitureType: 0
   itemOffset: {x: 0.41, y: 7.42}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Personalidad inmediata

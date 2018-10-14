@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Accesory4
   m_EditorClassIdentifier: 
   itemID: 4
-  itemName: 
+  itemName: Espada de hierro
   itemGraphic: {fileID: 21300000, guid: d0d2d68bad0eeee4a9a881fdca9aa11b, type: 3}
   itemType: 0
   clothType: 7
   furnitureType: 0
   itemOffset: {x: -1.7, y: -2.53}
-  itemPrice: 0
+  itemPrice: 300
+  Description: +5 al derrotar mounstros

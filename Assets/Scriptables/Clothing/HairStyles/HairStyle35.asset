@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle35
   m_EditorClassIdentifier: 
   itemID: 59
-  itemName: 
+  itemName: Corto
   itemGraphic: {fileID: 21300000, guid: cac7b2f914286004aaa5d11c67142b3b, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.63, y: 7.24}
-  itemPrice: 0
+  itemPrice: 300
+  Description: 

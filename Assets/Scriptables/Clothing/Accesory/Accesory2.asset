@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Accesory2
   m_EditorClassIdentifier: 
   itemID: 2
-  itemName: 
+  itemName: Bigote
   itemGraphic: {fileID: 21300000, guid: 4776e780d364ccd49b585e9e12f832f6, type: 3}
   itemType: 0
   clothType: 7
   furnitureType: 0
   itemOffset: {x: -0.25, y: 6.69}
-  itemPrice: 0
+  itemPrice: 300
+  Description: "La personalidad est\xE1 en los detalles"

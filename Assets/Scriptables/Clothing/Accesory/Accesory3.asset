@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Accesory3
   m_EditorClassIdentifier: 
   itemID: 3
-  itemName: 
+  itemName: Bolso
   itemGraphic: {fileID: 21300000, guid: 0ef6818d3b83e4b429877b7d0e9cb5cf, type: 3}
   itemType: 0
   clothType: 7
   furnitureType: 0
   itemOffset: {x: 3.52, y: -3.01}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para guardar muchas cosas

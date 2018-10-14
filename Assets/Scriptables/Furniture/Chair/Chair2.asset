@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Chair2
   m_EditorClassIdentifier: 
   itemID: 78
-  itemName: 
+  itemName: Silla
   itemGraphic: {fileID: 21300000, guid: 64817e3ba5bd1334ca8cb28fe7fd86ae, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 3
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: 

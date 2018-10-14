@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle11
   m_EditorClassIdentifier: 
   itemID: 35
-  itemName: 
+  itemName: Coleta
   itemGraphic: {fileID: 21300000, guid: 6976261557a90d4439aa52827f2e5217, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 1.45, y: 6.83}
-  itemPrice: 0
+  itemPrice: 300
+  Description: 

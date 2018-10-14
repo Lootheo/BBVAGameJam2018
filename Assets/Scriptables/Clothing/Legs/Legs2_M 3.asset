@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Legs2_M 3
   m_EditorClassIdentifier: 
   itemID: 64
-  itemName: Legs2_M
+  itemName: Bermuda
   itemGraphic: {fileID: 21300000, guid: 26839b475b9f9bd409ca9fcd64d6c813, type: 3}
   itemType: 0
   clothType: 5
   furnitureType: 0
   itemOffset: {x: 0.2, y: -2.71}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para el calor

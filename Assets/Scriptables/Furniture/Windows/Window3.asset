@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Window3
   m_EditorClassIdentifier: 
   itemID: 88
-  itemName: 
+  itemName: Ventana
   itemGraphic: {fileID: 21300000, guid: 9bacea1cd69146745af4bd6a8372a0e0, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 7
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: 

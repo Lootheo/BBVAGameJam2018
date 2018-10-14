@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle6
   m_EditorClassIdentifier: 
   itemID: 30
-  itemName: 
+  itemName: Casco de Hierro
   itemGraphic: {fileID: 21300000, guid: 383347c7950e0f44e838868d282c3f11, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 2.36, y: 7.33}
-  itemPrice: 0
+  itemPrice: 300
+  Description: +2 Turnos en Match 3

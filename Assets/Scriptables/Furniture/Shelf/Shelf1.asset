@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Shelf1
   m_EditorClassIdentifier: 
   itemID: 80
-  itemName: 
+  itemName: Estanteria
   itemGraphic: {fileID: 21300000, guid: 849c747433f8925419741863eef0b370, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 5
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: Guarda todo lo que puedas!

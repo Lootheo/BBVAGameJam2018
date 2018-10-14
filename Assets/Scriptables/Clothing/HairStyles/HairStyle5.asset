@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle5
   m_EditorClassIdentifier: 
   itemID: 29
-  itemName: 
+  itemName: Afro naranja
   itemGraphic: {fileID: 21300000, guid: eb8b6a3af7e8eac46ab9388abf096097, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.61, y: 8.85}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Los 80s te llaman

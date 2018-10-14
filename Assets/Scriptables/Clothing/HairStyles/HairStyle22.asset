@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle22
   m_EditorClassIdentifier: 
   itemID: 46
-  itemName: 
+  itemName: Largo
   itemGraphic: {fileID: 21300000, guid: a739c3392f270484c8546d07875ea124, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 1.45, y: 6.83}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para climas frios

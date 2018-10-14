@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Mouth7
   m_EditorClassIdentifier: 
   itemID: 73
-  itemName: 
+  itemName: Labial
   itemGraphic: {fileID: 21300000, guid: 3cfeab1490256054c82a2e284357989e, type: 3}
   itemType: 0
   clothType: 3
   furnitureType: 0
   itemOffset: {x: -0.17, y: 6.32}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Un toque llamativo
