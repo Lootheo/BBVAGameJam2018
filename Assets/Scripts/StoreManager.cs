@@ -37,17 +37,15 @@ public class StoreManager : MonoBehaviour {
     public void BuyWithCredit(Item item)
     {
         rm.avatarData.purchasedItems.Add(item.itemID);
-        rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
-        PlayerAccountManager.instance.BuyWithCredit(item);
-        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
-        SaveData.Save(rm.avatarData);
         
         if (item.itemType == ItemType.Furniture)
         {
             rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
         }
-        SaveData.Save(rm.avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(rm.avatarData);
+        
         confirmationDialog.gameObject.SetActive(false);
     }
 

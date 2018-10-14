@@ -76,6 +76,7 @@ public class CreditAccountState
 
     public void AddTransaction(Transaction transaction)
     {
+        Debug.LogError(transaction.Amount + " eso cuesta la transaccion");
         transactions.Add(transaction);
         Balance += transaction.Amount;
     }

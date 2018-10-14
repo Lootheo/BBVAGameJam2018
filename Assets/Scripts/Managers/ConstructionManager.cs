@@ -102,6 +102,7 @@ public class ConstructionManager : MonoBehaviour {
         rm.avatarData.houseItems[dex].positionX = pos.x;
         rm.avatarData.houseItems[dex].positionY = pos.y;
         ShowItemsOfType();
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(rm.avatarData);
     }
 }

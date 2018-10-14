@@ -338,7 +338,12 @@ Prefab:
       objectReference: {fileID: 1018550426}
     - target: {fileID: 1743568518399264, guid: 66886ddd7ae51c9449afa3b43e024fef, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685842897027548, guid: 66886ddd7ae51c9449afa3b43e024fef,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SavePlayerData
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66886ddd7ae51c9449afa3b43e024fef, type: 2}
@@ -976,7 +981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2041033402
 RectTransform:
   m_ObjectHideFlags: 0

@@ -14,49 +14,46 @@ public class MainManager : MonoBehaviour {
         PlayerAccountManager.instance.SetAccountData();
         if(PlayerAccountManager.instance.CreditAccount.InterestRate == 0)
         {
-            Debug.LogError("ofrecer credito");
+            OpenFirstCreditDialog();
         }
-        /*
-        DateTime cutDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
-        PlayerData data = SaveData.Load();
-        Credit credit;
-        bool alreadyHaveCredit = false;
-        if (data.accountData.InterestRate != 0) // ya tiene un credito
+        else
         {
-            alreadyHaveCredit = true;
-            credit = new Credit(data.accountData.InterestRate, data.accountData.CreditLimit);
-            cutDateTime = DateTime.Parse(data.accountData.currentCreditAccountData.CutDate);
-        } // end if 
-        else // le creamos su primer credito
-        {
-            credit = new Credit(10, 1000);
-            if (DateTime.Now.Hour >= 6 && alreadyHaveCredit) //checar si ya paso la fecha de corte
+            DateTime cutDate = Convert.ToDateTime(PlayerAccountManager.instance.CreditAccount.CutDate);
+            if(DateTime.Now > cutDate)
             {
-                TimeSpan span = new TimeSpan(24, 0, 0);
-                cutDateTime.Add(span);
-            }// end if
+                Debug.LogError("pasamos fecha de corte :v");
+                PlayerAccountManager.instance.MakeDailyCutoff();
+                RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+                SaveData.Save(RoomManager.GetInstance().avatarData);
+                OpenDailyCutoffDialog();
+            } // end if
         }
-
-        PlayerAccountManager.instance.SetCreditAccount(data.accountData.currentCreditAccountData.Balance, cutDateTime.ToString(), credit);
-        PlayerAccountManager.instance.AddPlayerGold(data.accountData.Gold);
-
-        if (DateTime.Now.Hour >= 6 && alreadyHaveCredit) //checar si ya paso la fecha de corte
-        {
-            PlayerAccountManager.instance.MakeDailyCutoff();
-            //avisar que se realizo el corte diario
-            if(PlayerAccountManager.instance.CreditAccount.Balance == 0)
-            {
-                //ofrecer mejora de credito en un dialog
-            }
-        }
-        */
 
         
+    }
+    public void AcceptCredit()
+    {
+        dialog.confirmButton.onClick.RemoveListener(WatchDetails);
+        dialog.cancelButton.onClick.RemoveListener(WatchDetails);
+        DateTime cutDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
+        cutDate.Add(new TimeSpan(24, 0, 0));
+        PlayerAccountManager.instance.SetCreditAccount(0, cutDate.ToString(), new Credit(10, 1000));
+        RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(RoomManager.GetInstance().avatarData);
+        dialog.gameObject.SetActive(false);
+    }
+
+    public void OpenFirstCreditDialog()
+    {
+        dialog.gameObject.SetActive(true);
+        dialog.warningText.text = "Bienvenido al juego para empezar te ofrecemos un credito inicial de 1000.00MX con una tasa de interes del 10%. Recuerda que el corte o fecha de pago es diario a las 6 am. Trata de mantener tu credito al corriente. Have fun.";
+        dialog.confirmButton.onClick.AddListener(AcceptCredit);
+        dialog.cancelButton.onClick.AddListener(AcceptCredit);
     }
 
     public void OpenDailyCutoffDialog()
     {
-        dialog.transform.parent.gameObject.SetActive(true);
+        dialog.gameObject.SetActive(true);
         dialog.warningText.text = "Tu saldo al corte es de: " + PlayerAccountManager.instance.WeeklyCreditState[
             PlayerAccountManager.instance.WeeklyCreditState.Count - 1].Balance + ".00MX. Tu nuevo saldo es de "
             + PlayerAccountManager.instance.CreditAccount.Balance + ".00MX.";
@@ -67,7 +64,7 @@ public class MainManager : MonoBehaviour {
 
     public void CloseWindow()
     {
-        dialog.transform.parent.gameObject.SetActive(false);
+        dialog.gameObject.SetActive(false);
     }
 
     public void VerifyForAugment()
@@ -84,7 +81,7 @@ public class MainManager : MonoBehaviour {
 
     public void OpenPromoDialog()
     {
-        dialog.transform.parent.gameObject.SetActive(true);
+        dialog.gameObject.SetActive(true);
         dialog.warningText.text = "Felicidades! Haz completado el dia sin una deuda, por eso Bancomer te ofrece mejorar una caracteristica de tu credito si asi lo deseas.";
         dialog.confirmButton.onClick.AddListener(OpenUpgradeCreditWindow);
     }
