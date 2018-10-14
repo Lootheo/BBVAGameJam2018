@@ -16,7 +16,10 @@ public class DragBuild : DragClass
     {
         Camera main = Camera.main;
         Vector2 worldPos = main.ScreenToWorldPoint(new Vector2(data.position.x, data.position.y));
-        Debug.Log(worldPos);
-        ConstructionManager.instance.BuildItemAtPosition(itemData, new Vector3(worldPos.x, worldPos.y, -5));
+        Collider2D hit = Physics2D.OverlapCircle(worldPos,1.0f);
+        if (hit != null && (hit.tag == "Wall" || hit.tag == "Floor"))
+        {
+            ConstructionManager.instance.BuildItemAtPosition(itemData, new Vector3(worldPos.x, worldPos.y, -5));
+        }
     }
 }
