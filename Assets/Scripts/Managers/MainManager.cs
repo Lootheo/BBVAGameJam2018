@@ -48,7 +48,7 @@ public class MainManager : MonoBehaviour {
     public void OpenFirstCreditDialog()
     {
         dialog.gameObject.SetActive(true);
-        dialog.warningText.text = "Bienvenido al juego para empezar te ofrecemos un credito inicial de 1000.00MX con una tasa de interes del 10%. Recuerda que el corte o fecha de pago es diario a las 6 am. Trata de mantener tu credito al corriente. Have fun.";
+        dialog.warningText.text = "Bienvenido al juego para empezar te ofrecemos un credito inicial. Trata de mantener tu credito al corriente. Diviertete.";
         dialog.confirmButton.onClick.AddListener(AcceptCredit);
         dialog.cancelButton.onClick.AddListener(AcceptCredit);
     }
