@@ -6,6 +6,5 @@ public class ClickableItem : MonoBehaviour {
 
 	public virtual void OnItemClick()
     {
-
     }
 }

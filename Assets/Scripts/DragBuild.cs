@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class DragBuild : DragClass
 {
+    public Object GoldGeneratorPrefab;
     public override void OnEndDrag(PointerEventData eventData)
     {
         if (m_DraggingIcon != null)
@@ -17,6 +18,12 @@ public class DragBuild : DragClass
         Camera main = Camera.main;
         Vector2 worldPos = main.ScreenToWorldPoint(new Vector2(data.position.x, data.position.y));
         RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+        Transform mainCanvas = GameObject.Find("Canvas").transform;
+        Vector3 goldChargePrefabPos = Camera.main.ScreenToWorldPoint(data.position);
+        if (itemData.furnitureType != FurnitureType.None)
+        {
+            Instantiate(GoldGeneratorPrefab, new Vector3(goldChargePrefabPos.x, goldChargePrefabPos.y, -10), Quaternion.identity, mainCanvas);
+        }
         if (hit.collider!=null)
         {
             switch (itemData.furnitureType)
@@ -47,5 +54,8 @@ public class DragBuild : DragClass
                 ConstructionManager.instance.ChangeRoom(itemData);
             }
         }
+
+        FindObjectOfType<ClickableCharacter>().followingCharacter = true;
+        FindObjectOfType<ClickableCharacter>().canMove = true;
     }
 }

@@ -29,6 +29,11 @@ public class RoomManager : MonoBehaviour {
         conceptualUI.SetActive(false);
         ffbc.WriteNewUserData(avatarData.avatarName, new ServerData(avatarData));
     }
+
+    public void Something()
+    {
+        Debug.Log("Something");
+    }
     private void Update()
     {
         
@@ -37,14 +42,15 @@ public class RoomManager : MonoBehaviour {
     {
         if (show)
         {
-            Camera.main.orthographicSize = 1.75f;
+            //Camera.main.orthographicSize = 1.75f;
             Vector3 newCameraPosition = FindObjectOfType<ClickableCharacter>().transform.position;
             FindObjectOfType<ClickableCharacter>().followingCharacter = false;
             FindObjectOfType<ClickableCharacter>().canMove = false;
+            FindObjectOfType<ClickableCharacter>().GetComponent<BoxCollider2D>().enabled = false;
             Camera.main.transform.position = new Vector3(newCameraPosition.x, newCameraPosition.y, Camera.main.transform.position.z);
         }
-        else
-        {
+        else { 
+            FindObjectOfType<ClickableCharacter>().GetComponent<BoxCollider2D>().enabled = true;
             FindObjectOfType<ClickableCharacter>().followingCharacter = true;
             FindObjectOfType<ClickableCharacter>().canMove = true;
             Camera.main.orthographicSize = 4.0f;
