@@ -88,8 +88,8 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void PayCredit(int playerPoints)
     {
-        Transaction transaction = new Transaction("Payed amount to credit " + playerPoints, -playerPoints, DateTime.Now.ToString());
-        CreditAccount.AddTransaction(transaction);
+        Transaction transaction = new Transaction("Payed amount to credit " + playerPoints, playerPoints, DateTime.Now.ToString());
+        CreditAccount.AddPayment(transaction);
         Gold -= playerPoints;
     }
 
