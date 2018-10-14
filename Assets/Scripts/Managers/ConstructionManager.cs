@@ -13,6 +13,7 @@ public class ConstructionManager : MonoBehaviour {
     public Canvas dragCanvas;
     public GameObject furniturePrefab;
     List<GameObject> roomFurniture = new List<GameObject>();
+    public SpriteRenderer roomSprite;
     // Use this for initialization
 
     public static ConstructionManager instance;
@@ -25,11 +26,18 @@ public class ConstructionManager : MonoBehaviour {
 
     void ConstructRoom()
     {
+        //Item currentRoom = rm.allItems.Find(x => x.itemType == ItemType.Room && x.displayed == true);
+
         foreach (Furniture item in rm.avatarData.houseItems)
         {
             Item owned = rm.allItems.Find(x => x.itemID == item.furnitureID && item.displayed == true);
             if (owned != null)
             {
+                if (owned.itemType == ItemType.Room)
+                {
+                    roomSprite.sprite = owned.itemGraphic;
+                    continue;
+                }
                 GameObject itemInstance = Instantiate(furniturePrefab, new Vector3(item.positionX, item.positionY, -5f), Quaternion.identity) as GameObject;
                 itemInstance.GetComponent<SpriteRenderer>().sprite = owned.itemGraphic;
                 itemInstance.AddComponent<PolygonCollider2D>();
@@ -64,6 +72,16 @@ public class ConstructionManager : MonoBehaviour {
             scrollArea.sizeDelta += new Vector2(80, 0);
             currentShopItems.Add(itemInstance);
         }
+    }
+
+    public void ChangeRoom(Item newRoom)
+    {
+        roomSprite.sprite = newRoom.itemGraphic;
+        Furniture furniture = rm.avatarData.houseItems.Find(x => x.furnitureID == newRoom.itemID);
+        furniture.displayed = true;
+        int dex = rm.avatarData.houseItems.IndexOf(furniture);
+        rm.avatarData.houseItems[dex].displayed = true;
+        SaveData.Save(rm.avatarData);
     }
 
     void ClearShopObjects()

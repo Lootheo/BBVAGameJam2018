@@ -38,9 +38,9 @@ public class StoreManager : MonoBehaviour {
     {
         rm.avatarData.purchasedItems.Add(item.itemID);
         PlayerAccountManager.instance.BuyWithCredit(item);
-        //rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
 
-        if (item.itemType == ItemType.Furniture)
+        if (item.itemType == ItemType.Furniture || item.itemType == ItemType.Room)
         {
             rm.avatarData.houseItems.Add(new Furniture(item.itemID, 0, 0, false));
         }
@@ -49,15 +49,18 @@ public class StoreManager : MonoBehaviour {
         confirmationDialog.gameObject.SetActive(false);
     }
 
-    public void ChangeFilter(bool currentValue)
+    public void ChangeFilter(int type)
     {
-        switch (itemTypeFilter)
+        switch (type)
         {
-            case ItemType.Cloth:
+            case 0:
                 itemTypeFilter = ItemType.Furniture;
                 break;
-            case ItemType.Furniture:
+            case 1:
                 itemTypeFilter = ItemType.Cloth;
+                break;
+            case 2:
+                itemTypeFilter = ItemType.Room;
                 break;
             default:
                 break;
@@ -82,6 +85,9 @@ public class StoreManager : MonoBehaviour {
                     break;
                 case ItemType.Furniture:
                     filteredList = rm.allItems.Where(x => x.furnitureType == (FurnitureType)filter).ToList();
+                    break;
+                case ItemType.Room:
+                    filteredList = rm.allItems.Where(x => x.itemType == ItemType.Room).ToList();
                     break;
                 default:
                     break;

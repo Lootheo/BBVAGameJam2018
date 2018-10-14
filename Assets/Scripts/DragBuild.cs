@@ -42,6 +42,10 @@ public class DragBuild : DragClass
                 default:
                     break;
             }
+            if (itemData.itemType == ItemType.Room)
+            {
+                ConstructionManager.instance.ChangeRoom(itemData);
+            }
         }
     }
 }
