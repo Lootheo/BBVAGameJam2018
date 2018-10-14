@@ -42,6 +42,13 @@ public class StoreManager : MonoBehaviour {
         rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(rm.avatarData);
         
+        if (item.itemType == ItemType.Furniture)
+        {
+            rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
+        }
+        SaveData.Save(rm.avatarData);
+        PlayerAccountManager.instance.BuyWithCredit(item);
+        confirmationDialog.gameObject.SetActive(false);
     }
 
     public void ChangeFilter(bool currentValue)

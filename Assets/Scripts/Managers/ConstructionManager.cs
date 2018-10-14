@@ -47,6 +47,7 @@ public class ConstructionManager : MonoBehaviour {
             Item owned = rm.allItems.Find(x => x.itemID == item.furnitureID && item.displayed == false);
             if (owned!=null)
             {
+                Debug.Log(owned.itemName + " " + owned.itemID);
                 filteredList.Add(owned);
             }
         }
