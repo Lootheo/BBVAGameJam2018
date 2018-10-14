@@ -39,6 +39,7 @@ public class ClickableCharacter: ClickableItem
         }
         //transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
     }
+
     public void Update()
     {
        
