@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 212d172b2301c3a4584a93b48ef0a4cf, type: 3}
-  m_Name: Room_07
+  m_Name: Bed4
   m_EditorClassIdentifier: 
-  itemID: 114
-  itemName: Cuarto morado
-  itemGraphic: {fileID: 21300000, guid: e8f7fec9a116acb4b8218ed01ca52e42, type: 3}
-  itemType: 2
+  itemID: 107
+  itemName: Cama
+  itemGraphic: {fileID: 21300000, guid: ca42090044bca50468316f9ddd5e64de, type: 3}
+  itemType: 1
   clothType: 0
-  furnitureType: 0
+  furnitureType: 1
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
-  Description: 
+  itemPrice: 500
+  Description: Una comoda cama
