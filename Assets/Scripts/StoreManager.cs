@@ -166,7 +166,7 @@ public class StoreManager : MonoBehaviour {
     public void OpenDeniedShopingWindow(Item item)
     {
         confirmationDialog.gameObject.SetActive(true);
-        confirmationDialog.warningText.text = "No tienes suficiente saldo para comprar el objeto " + item.name + ". Saldo disponible: " +
+        confirmationDialog.warningText.text = "No tienes suficiente saldo para comprar el objeto " + item.itemName + ". Saldo disponible: " +
             PlayerAccountManager.instance.Gold + ".00MX. Presiona Aceptar para hacer un nuevo prestamo.";
         confirmationDialog.confirmButton.onClick.AddListener(CloseWindow);
         confirmationDialog.confirmButton.onClick.AddListener(askmoney);

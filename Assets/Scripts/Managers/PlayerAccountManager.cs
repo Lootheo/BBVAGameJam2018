@@ -81,7 +81,7 @@ public class PlayerAccountManager : MonoBehaviour
 
     public void BuyWithCredit(Item item)
     {
-        Transaction transaction = new Transaction(item.name + " pagado con credito ", item.itemPrice, DateTime.Now.ToString());
+        Transaction transaction = new Transaction(item.itemName + " pagado con credito ", item.itemPrice, DateTime.Now.ToString());
         AddTransaction(transaction);
         CreditAccount.AddTransaction(transaction);
     }
