@@ -27,6 +27,7 @@ public class VisitManager : MonoBehaviour {
 
     public void GoToHostHouse(ServerData hostData)
     {
+        ffbc.SelectPlayer(hostData.avatarName);
         dataCarrier.playerToVisit = hostData;
         SceneManager.LoadScene("VisitPlayer");
     }

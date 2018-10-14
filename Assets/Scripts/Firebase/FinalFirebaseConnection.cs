@@ -10,6 +10,8 @@ public class FinalFirebaseConnection : MonoBehaviour {
     DatabaseReference reference;
     public List<ServerData> playerData;
 
+    public DatabaseReference userReference;
+
     void Start()
     {
         // Set up the Editor before calling into the realtime database.
@@ -17,6 +19,7 @@ public class FinalFirebaseConnection : MonoBehaviour {
         FirebaseDatabase.DefaultInstance.GoOnline();
         // Get the root reference location of the database.
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+        
         //reference.ChildAdded += HandleChildAdded;
     }
 
@@ -25,6 +28,20 @@ public class FinalFirebaseConnection : MonoBehaviour {
         StartCoroutine(Waiter(userId, data));
         //reference.Child("users").Child(userId).Child("username").SetValueAsync(name);
 
+    }
+
+    void HandleValueChanged(object sender, ValueChangedEventArgs args)
+    {
+        Dictionary<string, object> update = (Dictionary<string, object>)args.Snapshot.Value;
+        Debug.Log("Estamos en value changed");
+        /*foreach (string item in update.Keys)
+        {
+            //Debug.Log(item);
+        }
+        foreach (object item in update.Values)
+        {
+            //Debug.Log(item.GetType().ToString());
+        }*/
     }
 
     IEnumerator Waiter(string userId, ServerData data)
@@ -50,6 +67,25 @@ public class FinalFirebaseConnection : MonoBehaviour {
 
         //topScore = (long)update["topScore"];
         //Debug.Log("NewTopScore:" + topScore);
+    }
+
+    void HandleChildChanged(object sender, ChildChangedEventArgs args)
+    {
+        Dictionary<string, object> update = (Dictionary<string, object>)args.Snapshot.Value;
+        //string msg = update["message"].ToString();
+        //string mail = update["email"].ToString();
+        string time = update["timeString"].ToString();
+        Debug.Log(time);
+        Debug.Log("Estamos en child changed");
+        Debug.Log(args.Snapshot.Key);
+        Debug.Log(args.Snapshot.Reference);
+    }
+
+    public void SelectPlayer(string username)
+    {
+        userReference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(username);
+        userReference.ValueChanged += HandleValueChanged;
+        userReference.ChildChanged += HandleChildChanged;
     }
 
     void GetPlayerBases()

@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17254902, g: 0.09019608, b: 0.2784314, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1224,16 +1224,22 @@ MonoBehaviour:
   enemyMaxHealth: 0
   enemyCurrentHealth: 0
   playerData:
+    purchasedItems: 
+    houseItems: []
     avatarItems: 
     avatarName: 
     accountData:
       Gold: 0
       InterestRate: 0
       CreditLimit: 0
-      data:
+      currentCreditAccountData:
         Balance: 0
-        CutDate: 
+        CutDate: 10/14/2018 6:00:00 AM
         transactions: []
+        interestRate: 0
+        creditLimit: 0
+      weeklyHistorial: []
+      allTransactions: []
 --- !u!4 &1703671466
 Transform:
   m_ObjectHideFlags: 0
