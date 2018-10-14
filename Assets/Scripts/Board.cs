@@ -17,10 +17,10 @@ public class Board : MonoBehaviour {
     public GameObject victoryVignette;
     public float swapTime = 0.2f;
 
-    public Text goldGainedText, enemyHealthLeft,turnsLeftText;
-    public Image enemyHealthBar;
+    public Text goldGainedText, turnsLeftText;
+    public Image goldBar;
 
-    public int totalGoldGained, enemyMaxHealth, enemyCurrentHealth;
+    public int totalGoldGained, maxGoldGained;
 
     TileClass[,] m_allTiles;
     Piece[,] m_allPieces;
@@ -39,10 +39,8 @@ public class Board : MonoBehaviour {
         SetupCamera();
         FillBoard(5, 1f);
         totalGoldGained = 0;
-        enemyMaxHealth = Random.Range(30, 50);
-        enemyCurrentHealth = enemyMaxHealth;
+        maxGoldGained = Random.Range(50, 80);
         goldGainedText.text = totalGoldGained.ToString();
-        enemyHealthLeft.text = enemyCurrentHealth.ToString();
         turnsLeftText.text = turnsLeft.ToString();
         //HighlightMatches();
     }
@@ -408,9 +406,7 @@ public class Board : MonoBehaviour {
         int goldGained = gamePieces.Count;
         totalGoldGained += goldGained;
         goldGainedText.text = totalGoldGained.ToString();
-        enemyCurrentHealth -= goldGained;
-        enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
-        enemyHealthLeft.text = enemyCurrentHealth.ToString();
+        goldBar.fillAmount = ((float)totalGoldGained / (float)maxGoldGained);
 
         foreach (Piece piece in gamePieces)
         {
@@ -457,13 +453,12 @@ public class Board : MonoBehaviour {
             }
         }
 
-        if (enemyCurrentHealth <= 0 || turnsLeft <=0)
+        if (totalGoldGained >= maxGoldGained || turnsLeft <=0)
         {
-            enemyCurrentHealth = 0;
-            enemyHealthBar.fillAmount = 0;
-            enemyHealthLeft.text = enemyCurrentHealth.ToString();
+            totalGoldGained = maxGoldGained;
+            goldBar.fillAmount = 1;
+            goldGainedText.text = totalGoldGained.ToString();
             StartCoroutine(GainGoldAndLeave(goldGained));
-            Debug.Log("enemy defeated");
         }
     }
     public IEnumerator GainGoldAndLeave(int goldGained)
@@ -476,7 +471,7 @@ public class Board : MonoBehaviour {
         }
         victoryVignette.SetActive(true);
         playerData.accountData.Gold = playerData.accountData.Gold + goldGained;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MainScene");
     }
 
     private List<Piece> FindMatchesAt(int i, int j, int minLength = 3)

@@ -7,5 +7,6 @@ public class PlayerVisitSender : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
+        //GameObject.FindObjectOfType<>
 	}
 }

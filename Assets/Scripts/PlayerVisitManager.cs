@@ -68,7 +68,8 @@ public class PlayerVisitManager : MonoBehaviour {
     }
 
     public GameObject furniturePrefab;
-    void ConstructRoom()
+
+    public void ConstructRoom()
     {
         foreach (Furniture item in hostData.houseItems)
         {

@@ -5,40 +5,36 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-public class FinalFirebaseConnection : MonoBehaviour {
-
+public class FirebaseSubscription : MonoBehaviour {
     DatabaseReference reference;
-    public List<ServerData> playerData;
 
     public DatabaseReference userReference;
-
-
-    
+    public PlayerVisitManager pvm;
+    public PlayerVisitSender pvs;
+    ServerData playerData;
 
     void Start()
     {
-        
         // Set up the Editor before calling into the realtime database.
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://bbvajam.firebaseio.com/");
         FirebaseDatabase.DefaultInstance.GoOnline();
         // Get the root reference location of the database.
         reference = FirebaseDatabase.DefaultInstance.RootReference;
-        
+        pvs = GameObject.FindObjectOfType<PlayerVisitSender>();
+        playerData = pvs.playerToVisit;
+        if (playerData != null)
+        {
+            StartCoroutine(Waiter(playerData.avatarName, playerData));
+        }
         //reference.ChildAdded += HandleChildAdded;
     }
 
-    public void WriteNewUserData(string userId, ServerData data)
-    {
-        StartCoroutine(Waiter(userId, data));
-        //reference.Child("users").Child(userId).Child("username").SetValueAsync(name);
-
-    }
 
     void HandleValueChanged(object sender, ValueChangedEventArgs args)
     {
         Dictionary<string, object> update = (Dictionary<string, object>)args.Snapshot.Value;
-        Debug.Log("Estamos en value changed");
-
+        Debug.Log(args.Snapshot.Value.ToString());
+        pvm.ConstructRoom();
         /*foreach (string item in update.Keys)
         {
             //Debug.Log(item);
@@ -54,12 +50,7 @@ public class FinalFirebaseConnection : MonoBehaviour {
         yield return new WaitUntil(() => reference != null);
         string json = JsonUtility.ToJson(data);
         //Debug.Log(json);
-        reference.Child("users").Child(userId).SetRawJsonValueAsync(json);
-    }
-
-    public void ShowFriends()
-    {
-        GetPlayerBases();
+        SelectPlayer(userId);
     }
 
     void HandleChildAdded(object sender, ChildChangedEventArgs args)
@@ -95,30 +86,5 @@ public class FinalFirebaseConnection : MonoBehaviour {
         userReference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(username);
         userReference.ValueChanged += HandleValueChanged;
         userReference.ChildChanged += HandleChildChanged;
-    }
-
-    public IEnumerator WaitToSubscribe()
-    {
-        yield return null;
-    }
-
-    void GetPlayerBases()
-    {
-        FirebaseDatabase.DefaultInstance.GetReference("users").LimitToLast(5).GetValueAsync().ContinueWith(task => {
-            if (task.IsFaulted)
-            {
-                // Handle the error...
-            }
-            else if (task.IsCompleted)
-            {
-                playerData = new List<ServerData>();
-                DataSnapshot snapshot = task.Result;
-                foreach (DataSnapshot item in snapshot.Children)
-                {
-                    playerData.Add(JsonUtility.FromJson<ServerData>(item.GetRawJsonValue()));
-                }
-                // Do something with snapshot...
-            }
-        });
     }
 }

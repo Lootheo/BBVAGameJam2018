@@ -13,6 +13,7 @@ public class VisitManager : MonoBehaviour {
 	
     public void FillEntryList()
     {
+        ffbc.ShowFriends();
         ClearShopObjects();
         foreach (ServerData item in ffbc.playerData)
         {
@@ -27,9 +28,13 @@ public class VisitManager : MonoBehaviour {
 
     public void GoToHostHouse(ServerData hostData)
     {
-        ffbc.SelectPlayer(hostData.avatarName);
         dataCarrier.playerToVisit = hostData;
         SceneManager.LoadScene("VisitPlayer");
+    }
+
+    public void GoToGameScene()
+    {
+        SceneManager.LoadScene("MatchThree");
     }
 
     void ClearShopObjects()
