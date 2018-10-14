@@ -45,7 +45,6 @@ public class PlayerData
         {
             historial.Add(new CreditAccountData(pm.WeeklyCreditState[i].Balance, pm.WeeklyCreditState[i].CutDate, pm.WeeklyCreditState[i].InterestRate, pm.WeeklyCreditState[i].CurrentCredit.CreditLimit, pm.WeeklyCreditState[i].transactions));
         }
-
         accountData = new PlayerAccountData(pm.Gold, pm.CreditAccount.InterestRate, pm.CreditAccount.CurrentCredit.CreditLimit, data, historial, pm.transactions);
     }
 }

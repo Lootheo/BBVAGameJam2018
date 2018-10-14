@@ -36,7 +36,7 @@ public class PlayerAccountManager : MonoBehaviour
         {
             historial.Add(accountData.weeklyHistorial[i]);
         }
-
+        Gold = accountData.Gold;
         CreditAccount = new CreditAccountState(creditData.Balance, creditData.CutDate, new Credit(accountData.InterestRate, accountData.CreditLimit));
         transactions = allTransactions;
         for(int i = 0; i < historial.Count; i++)
