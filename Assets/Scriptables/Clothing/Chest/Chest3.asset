@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Chest3
   m_EditorClassIdentifier: 
   itemID: 7
-  itemName: Chest2_M
+  itemName: Armadura de hierro
   itemGraphic: {fileID: 21300000, guid: 93471ef71cb7d4747adf04ea42919a27, type: 3}
   itemType: 0
   clothType: 4
   furnitureType: 0
   itemOffset: {x: -0.04, y: 1.74}
-  itemPrice: 0
+  itemPrice: 300
+  Description: +2 turnos

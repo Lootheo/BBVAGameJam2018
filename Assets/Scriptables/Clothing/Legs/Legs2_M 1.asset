@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Legs2_M 1
   m_EditorClassIdentifier: 
   itemID: 62
-  itemName: Legs2_M
+  itemName: Piernas de hierro
   itemGraphic: {fileID: 21300000, guid: 6679668654daa614ba50b51da508da38, type: 3}
   itemType: 0
   clothType: 5
   furnitureType: 0
   itemOffset: {x: -0.5, y: -5.12}
-  itemPrice: 0
+  itemPrice: 300
+  Description: +2 turnos

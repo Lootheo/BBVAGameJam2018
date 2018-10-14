@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye5
   m_EditorClassIdentifier: 
   itemID: 17
-  itemName: 
+  itemName: Ojos serios
   itemGraphic: {fileID: 21300000, guid: 2c8e82bbffeefc048ae25581ac6f1b2b, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.17, y: 7.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Nada me impresiona

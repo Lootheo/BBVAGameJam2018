@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Table1
   m_EditorClassIdentifier: 
   itemID: 84
-  itemName: 
+  itemName: Mesa
   itemGraphic: {fileID: 21300000, guid: eb617252b7276194bb8226210b6ae767, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 6
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: 

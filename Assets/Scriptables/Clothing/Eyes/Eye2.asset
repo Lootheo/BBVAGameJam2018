@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye2
   m_EditorClassIdentifier: 
   itemID: 14
-  itemName: 
+  itemName: "Pesta\xF1as largas"
   itemGraphic: {fileID: 21300000, guid: f9fa559c19cdcc94f82381119917bca4, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.17, y: 7.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Resalta inmediatamente

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle36
   m_EditorClassIdentifier: 
   itemID: 60
-  itemName: 
+  itemName: Corto
   itemGraphic: {fileID: 21300000, guid: b0422545a07e5a347bb50bdb780d7a0b, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.63, y: 7.24}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para climas frios

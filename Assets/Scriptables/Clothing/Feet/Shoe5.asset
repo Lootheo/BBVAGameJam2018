@@ -18,4 +18,5 @@ MonoBehaviour:
   clothType: 6
   furnitureType: 0
   itemOffset: {x: -0.4, y: -8.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Listo para la playa

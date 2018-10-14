@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Bed1
   m_EditorClassIdentifier: 
   itemID: 74
-  itemName: 
+  itemName: Cama
   itemGraphic: {fileID: 21300000, guid: 38fb5c49a1a16c74ebc5a50a68910314, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 1
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: Una comoda cama

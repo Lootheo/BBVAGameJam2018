@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Accesory5
   m_EditorClassIdentifier: 
   itemID: 5
-  itemName: 
+  itemName: Lentes
   itemGraphic: {fileID: 21300000, guid: c3a5db301b2a661468987732dc0a57da, type: 3}
   itemType: 0
   clothType: 7
   furnitureType: 0
   itemOffset: {x: 0.36, y: 7.56}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Para verte mejor

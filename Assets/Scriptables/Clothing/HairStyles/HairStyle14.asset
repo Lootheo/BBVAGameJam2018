@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle14
   m_EditorClassIdentifier: 
   itemID: 38
-  itemName: 
+  itemName: Libre
   itemGraphic: {fileID: 21300000, guid: 77315c8e5b48de44b938c393db198538, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.58, y: 7.52}
-  itemPrice: 0
+  itemPrice: 300
+  Description: 

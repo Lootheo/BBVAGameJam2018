@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle3
   m_EditorClassIdentifier: 
   itemID: 27
-  itemName: 
+  itemName: Afro Amarillo
   itemGraphic: {fileID: 21300000, guid: 8ad9a282c34dc67458812ea5b80acefc, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.61, y: 8.85}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Los 80s te llaman

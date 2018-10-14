@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye6
   m_EditorClassIdentifier: 
   itemID: 18
-  itemName: 
+  itemName: Ojos zombies
   itemGraphic: {fileID: 21300000, guid: b5d9de2f8e3be8e42b2cc42bd8b30c14, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.17, y: 7.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Tu cara despues de este game jam

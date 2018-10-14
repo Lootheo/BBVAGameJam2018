@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle10
   m_EditorClassIdentifier: 
   itemID: 34
-  itemName: 
+  itemName: De lado rojo
   itemGraphic: {fileID: 21300000, guid: 5218e2358594ff9469160f39496183bc, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.02, y: 8.16}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Lo ultimo en estilo

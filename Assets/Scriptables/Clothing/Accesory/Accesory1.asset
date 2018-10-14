@@ -18,5 +18,5 @@ MonoBehaviour:
   clothType: 7
   furnitureType: 0
   itemOffset: {x: -1, y: -3.23}
-  itemPrice: 0
-  Description: 
+  itemPrice: 300
+  Description: Perfecto para salir.

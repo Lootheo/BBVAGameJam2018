@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Chest6
   m_EditorClassIdentifier: 
   itemID: 10
-  itemName: Chest2_M
+  itemName: Playera Calavera
   itemGraphic: {fileID: 21300000, guid: d78384e336bc3ea43b1465fb74f52321, type: 3}
   itemType: 0
   clothType: 4
   furnitureType: 0
   itemOffset: {x: 0.61, y: 2.02}
-  itemPrice: 0
+  itemPrice: 300
+  Description: La oscuridad me envuelve

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Skin_02
   m_EditorClassIdentifier: 
   itemID: 0
-  itemName: 
+  itemName: Piel 2
   itemGraphic: {fileID: 21300000, guid: 6c14bb9d418a2974399a633ed4254e17, type: 3}
   itemType: 3
   clothType: 0
   furnitureType: 0
   itemOffset: {x: 0, y: 0}
   itemPrice: 0
+  Description: 

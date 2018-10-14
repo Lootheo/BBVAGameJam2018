@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye1
   m_EditorClassIdentifier: 
   itemID: 13
-  itemName: 
+  itemName: Ojos Bizcos
   itemGraphic: {fileID: 21300000, guid: c66826f89f3677a4c8c159554a8a1c35, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.08, y: 7.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ojos locos

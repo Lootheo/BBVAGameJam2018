@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Room_07
   m_EditorClassIdentifier: 
   itemID: 0
-  itemName: Starter Room
+  itemName: Cuarto morado
   itemGraphic: {fileID: 21300000, guid: e8f7fec9a116acb4b8218ed01ca52e42, type: 3}
   itemType: 2
   clothType: 0
   furnitureType: 0
   itemOffset: {x: 0, y: 0}
   itemPrice: 0
+  Description: 

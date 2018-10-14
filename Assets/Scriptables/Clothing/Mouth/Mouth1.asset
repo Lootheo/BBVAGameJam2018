@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Mouth1
   m_EditorClassIdentifier: 
   itemID: 67
-  itemName: 
+  itemName: Sonrisa
   itemGraphic: {fileID: 21300000, guid: 05a0b464e504f994498d19305c09d008, type: 3}
   itemType: 0
   clothType: 3
   furnitureType: 0
   itemOffset: {x: -0.17, y: 6.32}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Una ligera sonrisa

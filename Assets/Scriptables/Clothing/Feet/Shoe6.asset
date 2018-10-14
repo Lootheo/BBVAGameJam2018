@@ -18,4 +18,5 @@ MonoBehaviour:
   clothType: 6
   furnitureType: 0
   itemOffset: {x: -0.44, y: -7.51}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Calcetines para un dia frio

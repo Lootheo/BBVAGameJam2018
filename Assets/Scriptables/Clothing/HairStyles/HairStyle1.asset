@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle1
   m_EditorClassIdentifier: 
   itemID: 25
-  itemName: 
+  itemName: Afro
   itemGraphic: {fileID: 21300000, guid: a4a5a2295e6ade04a874057550fd8864, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.61, y: 8.85}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Los 80s te llaman

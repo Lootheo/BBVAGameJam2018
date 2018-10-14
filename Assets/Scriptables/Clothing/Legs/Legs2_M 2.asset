@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Legs2_M 2
   m_EditorClassIdentifier: 
   itemID: 63
-  itemName: Legs2_M
+  itemName: Pantalones azules
   itemGraphic: {fileID: 21300000, guid: 14105773a8e0f6545a732a89eeb894ba, type: 3}
   itemType: 0
   clothType: 5
   furnitureType: 0
   itemOffset: {x: 0.23, y: -4.32}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Unos simples pantalones

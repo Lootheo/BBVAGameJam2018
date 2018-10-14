@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Chest8
   m_EditorClassIdentifier: 
   itemID: 12
-  itemName: Chest2_M
+  itemName: Tanktop Azul
   itemGraphic: {fileID: 21300000, guid: 88c73c8316d6bb14885cbe6d51b83860, type: 3}
   itemType: 0
   clothType: 4
   furnitureType: 0
   itemOffset: {x: 0.43, y: 2.02}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para la playa

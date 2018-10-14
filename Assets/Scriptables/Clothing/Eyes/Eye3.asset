@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye3
   m_EditorClassIdentifier: 
   itemID: 15
-  itemName: 
+  itemName: Ojos Largos
   itemGraphic: {fileID: 21300000, guid: 3a653bea71d45c545b6b1420e53fafb7, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.17, y: 7.65}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Alargados

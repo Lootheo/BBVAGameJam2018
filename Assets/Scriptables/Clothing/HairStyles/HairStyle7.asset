@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: HairStyle7
   m_EditorClassIdentifier: 
   itemID: 31
-  itemName: 
+  itemName: Casco Astronauta
   itemGraphic: {fileID: 21300000, guid: 30bd592a9ae2d7241acf88d68343a484, type: 3}
   itemType: 0
   clothType: 1
   furnitureType: 0
   itemOffset: {x: 0.71, y: 8.3}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Listo para el espacio

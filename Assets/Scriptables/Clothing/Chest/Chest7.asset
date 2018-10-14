@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Chest7
   m_EditorClassIdentifier: 
   itemID: 11
-  itemName: Chest2_M
+  itemName: Tanktop negro
   itemGraphic: {fileID: 21300000, guid: 21e7007a1d1f7884b948c646e8707a6a, type: 3}
   itemType: 0
   clothType: 4
   furnitureType: 0
   itemOffset: {x: 0.43, y: 2.02}
-  itemPrice: 0
+  itemPrice: 300
+  Description: Ideal para la playa

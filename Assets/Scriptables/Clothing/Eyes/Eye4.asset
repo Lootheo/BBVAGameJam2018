@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Eye4
   m_EditorClassIdentifier: 
   itemID: 16
-  itemName: 
+  itemName: Ojos normales
   itemGraphic: {fileID: 21300000, guid: 87b5ec599c634844c811e0d41b9bbdb5, type: 3}
   itemType: 0
   clothType: 2
   furnitureType: 0
   itemOffset: {x: -0.17, y: 7.65}
-  itemPrice: 0
+  itemPrice: 100
+  Description: Simples ojos

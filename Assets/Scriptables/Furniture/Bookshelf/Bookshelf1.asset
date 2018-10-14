@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Bookshelf1
   m_EditorClassIdentifier: 
   itemID: 76
-  itemName: 
+  itemName: Librero
   itemGraphic: {fileID: 21300000, guid: b5526850d78acfc4ba9b022dee3f6986, type: 3}
   itemType: 1
   clothType: 0
   furnitureType: 2
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
+  Description: 
