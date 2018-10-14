@@ -8,8 +8,7 @@ public class ConstructionManager : MonoBehaviour {
     public RectTransform scrollArea;
     public List<Item> ownedFurniture;
     public List<GameObject> currentShopItems;
-    public PlayerData avatarData;
-    public List<Item> allItems;
+    public RoomManager rm;
     public DataSender sender;
     public Canvas dragCanvas;
     public GameObject furniturePrefab;
@@ -21,15 +20,14 @@ public class ConstructionManager : MonoBehaviour {
     private void Awake()
     {
         instance = this;
-        avatarData = SaveData.Load();
         ConstructRoom();
     }
 
     void ConstructRoom()
     {
-        foreach (Furniture item in avatarData.houseItems)
+        foreach (Furniture item in rm.avatarData.houseItems)
         {
-            Item owned = allItems.Find(x => x.itemID == item.furnitureID && item.displayed == true);
+            Item owned = rm.allItems.Find(x => x.itemID == item.furnitureID && item.displayed == true);
             if (owned != null)
             {
                 GameObject itemInstance = Instantiate(furniturePrefab, new Vector3(item.positionX, item.positionY, -5f), Quaternion.identity) as GameObject;
@@ -44,9 +42,9 @@ public class ConstructionManager : MonoBehaviour {
     {
         ClearShopObjects();
         List<Item> filteredList = new List<Item>();
-        foreach (Furniture item in avatarData.houseItems)
+        foreach (Furniture item in rm.avatarData.houseItems)
         {
-            Item owned = allItems.Find(x => x.itemID == item.furnitureID && item.displayed == false);
+            Item owned = rm.allItems.Find(x => x.itemID == item.furnitureID && item.displayed == false);
             if (owned!=null)
             {
                 filteredList.Add(owned);
@@ -83,7 +81,7 @@ public class ConstructionManager : MonoBehaviour {
         {
             Destroy(item);
         }
-        foreach (Furniture item in avatarData.houseItems)
+        foreach (Furniture item in rm.avatarData.houseItems)
         {
             item.displayed = false;
         }
@@ -96,12 +94,13 @@ public class ConstructionManager : MonoBehaviour {
         itemInstance.GetComponent<SpriteRenderer>().sprite = item.itemGraphic;
         itemInstance.AddComponent<PolygonCollider2D>();
         roomFurniture.Add(itemInstance);
-        Furniture furniture = avatarData.houseItems.Find(x => x.furnitureID == item.itemID);
-        int dex = avatarData.houseItems.IndexOf(furniture);
-        avatarData.houseItems[dex].displayed = true;
-        avatarData.houseItems[dex].positionX = pos.x;
-        avatarData.houseItems[dex].positionY = pos.y;
+        Furniture furniture = rm.avatarData.houseItems.Find(x => x.furnitureID == item.itemID);
+        furniture.displayed = true;
+        int dex = rm.avatarData.houseItems.IndexOf(furniture);
+        rm.avatarData.houseItems[dex].displayed = true;
+        rm.avatarData.houseItems[dex].positionX = pos.x;
+        rm.avatarData.houseItems[dex].positionY = pos.y;
         ShowItemsOfType();
-        SaveData.Save(avatarData);
+        SaveData.Save(rm.avatarData);
     }
 }

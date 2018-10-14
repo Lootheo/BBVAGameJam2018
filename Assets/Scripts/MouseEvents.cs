@@ -13,6 +13,7 @@ public class MouseEvents : MonoBehaviour {
 
             if (hit.collider != null)
             {
+                Debug.Log(hit.collider.name);
                 ShowClickableInfo(hit);
             }
         }

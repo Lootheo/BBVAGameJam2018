@@ -7,16 +7,14 @@ using System.Linq;
 public class StoreManager : MonoBehaviour {
     public GameObject shopEntryPrefab;
     public RectTransform scrollArea;
-    public List<Item> allItems;
     public List<GameObject> currentShopItems;
     public ItemType itemTypeFilter;
-    public PlayerData avatarData;
     public UI_Dialog confirmationDialog;
+    public RoomManager rm;
 
     // Use this for initialization
     void Start () {
-        avatarData = SaveData.Load();
-        ShowItemsOfType(-1);
+        ShowItemsOfType(1);
 	}
 
     public static StoreManager instance;
@@ -38,9 +36,9 @@ public class StoreManager : MonoBehaviour {
 
     public void BuyWithCredit(Item item)
     {
-        avatarData.purchasedItems.Add(item.itemID);
-        avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
-        SaveData.Save(avatarData);
+        rm.avatarData.purchasedItems.Add(item.itemID);
+        rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
+        SaveData.Save(rm.avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
     }
 
@@ -66,17 +64,17 @@ public class StoreManager : MonoBehaviour {
         List<Item> filteredList = new List<Item>();
         if (filter < 0)
         {
-            filteredList = allItems.Where(x => x.itemType == itemTypeFilter).ToList();
+            filteredList = rm.allItems.Where(x => x.itemType == itemTypeFilter).ToList();
         }
         else if (filter > 0)
         {
             switch (itemTypeFilter)
             {
                 case ItemType.Cloth:
-                    filteredList = allItems.Where(x => x.clothType == (ClothType)filter).ToList();
+                    filteredList = rm.allItems.Where(x => x.clothType == (ClothType)filter).ToList();
                     break;
                 case ItemType.Furniture:
-                    filteredList = allItems.Where(x => x.furnitureType == (FurnitureType)filter).ToList();
+                    filteredList = rm.allItems.Where(x => x.furnitureType == (FurnitureType)filter).ToList();
                     break;
                 default:
                     break;
@@ -92,7 +90,7 @@ public class StoreManager : MonoBehaviour {
         {
             GameObject itemInstance = Instantiate(shopEntryPrefab, scrollArea);
             ShopItem shopItem = itemInstance.GetComponent<ShopItem>();
-            shopItem.SetData(item, avatarData.avatarItems.Contains(item.itemID));
+            shopItem.SetData(item, rm.avatarData.avatarItems.Contains(item.itemID));
             shopItem.itemBuyButton.onClick.AddListener(() => CheckMoneyToBuy(shopItem.itemToBuy));
             scrollArea.sizeDelta += new Vector2(0, 160);
             currentShopItems.Add(itemInstance);

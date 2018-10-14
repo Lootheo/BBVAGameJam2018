@@ -5,7 +5,8 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour {
     private static RoomManager instance = null;
     public GameObject conceptualUI;
-
+    public PlayerData avatarData;
+    public List<Item> allItems;
     public static RoomManager GetInstance()
     {
         if (instance == null)
@@ -19,6 +20,7 @@ public class RoomManager : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+        avatarData = SaveData.Load();
     }
 
     private void Start()
