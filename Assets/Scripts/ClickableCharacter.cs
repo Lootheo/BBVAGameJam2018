@@ -20,10 +20,13 @@ public class ClickableCharacter: ClickableItem
         finalPosition = transform.position;
     }
 
+    bool menuToggle = false;
+
     public override void OnItemClick()
     {
         Debug.Log("Show concept menu");
-        RoomManager.GetInstance().ShowConceptualMenu(transform.position, true);
+        menuToggle = !menuToggle;
+        RoomManager.GetInstance().ShowConceptualMenu(transform.position, menuToggle);
     }
 
     public void MoveCharacter(Vector3 positionToMove)
