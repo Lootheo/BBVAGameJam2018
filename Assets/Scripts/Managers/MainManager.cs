@@ -11,6 +11,12 @@ public class MainManager : MonoBehaviour {
 
     private void Start()
     {
+        PlayerAccountManager.instance.SetAccountData();
+        if(PlayerAccountManager.instance.CreditAccount.InterestRate == 0)
+        {
+            Debug.LogError("ofrecer credito");
+        }
+        /*
         DateTime cutDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
         PlayerData data = SaveData.Load();
         Credit credit;
@@ -19,7 +25,7 @@ public class MainManager : MonoBehaviour {
         {
             alreadyHaveCredit = true;
             credit = new Credit(data.accountData.InterestRate, data.accountData.CreditLimit);
-            cutDateTime = DateTime.Parse(data.accountData.data.CutDate);
+            cutDateTime = DateTime.Parse(data.accountData.currentCreditAccountData.CutDate);
         } // end if 
         else // le creamos su primer credito
         {
@@ -31,7 +37,7 @@ public class MainManager : MonoBehaviour {
             }// end if
         }
 
-        PlayerAccountManager.instance.SetCreditAccount(data.accountData.data.Balance, cutDateTime.ToString(), credit);
+        PlayerAccountManager.instance.SetCreditAccount(data.accountData.currentCreditAccountData.Balance, cutDateTime.ToString(), credit);
         PlayerAccountManager.instance.AddPlayerGold(data.accountData.Gold);
 
         if (DateTime.Now.Hour >= 6 && alreadyHaveCredit) //checar si ya paso la fecha de corte
@@ -43,7 +49,7 @@ public class MainManager : MonoBehaviour {
                 //ofrecer mejora de credito en un dialog
             }
         }
-        
+        */
 
         
     }

@@ -13,7 +13,7 @@ public class CreditAccountState
     private int availableCredit;
 
     private Credit currentCredit;
-    private List<Transaction> transactions;
+    public List<Transaction> transactions;
 
     public string CutDate
     {

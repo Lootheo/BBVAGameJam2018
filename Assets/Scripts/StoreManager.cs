@@ -38,8 +38,10 @@ public class StoreManager : MonoBehaviour {
     {
         rm.avatarData.purchasedItems.Add(item.itemID);
         rm.avatarData.houseItems.Add(new Furniture(item.itemID, Vector2.zero, false));
-        SaveData.Save(rm.avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(rm.avatarData);
+        
     }
 
     public void ChangeFilter(bool currentValue)
@@ -110,7 +112,7 @@ public class StoreManager : MonoBehaviour {
 
     public void CheckMoneyToBuy(Item item)
     {
-        if (CanBuyWithPoints(item.itemPrice))
+        if (CanBuyWithCredit(item.itemPrice))
         {
             OpenBuyConfirmationWindow(item);
         }
@@ -126,6 +128,7 @@ public class StoreManager : MonoBehaviour {
         confirmationDialog.warningText.text = "El objeto " + item.name + " tiene un costo de " + item.itemPrice + ".00MX y tienes un credito disponible de"
             + PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Presiona Aceptar para confirmar la compra.";
         confirmationDialog.confirmButton.onClick.AddListener(() => BuyWithCredit(item));
+        confirmationDialog.confirmButton.onClick.AddListener(CloseWindow);
     }
 
     public void OpenDeniedShopingWindow(Item item)
