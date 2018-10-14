@@ -12,9 +12,21 @@ public class MainManager : MonoBehaviour {
     private void Start()
     {
         PlayerAccountManager.instance.SetAccountData();
-        if(PlayerAccountManager.instance.CreditAccount.InterestRate == 0)
+        if (PlayerAccountManager.instance.CreditAccount.InterestRate == 0)
         {
-            Debug.LogError("ofrecer credito");
+            OpenFirstCreditDialog();
+        }
+        else
+        {
+            DateTime cutDate = Convert.ToDateTime(PlayerAccountManager.instance.CreditAccount.CutDate);
+            if (DateTime.Now > cutDate)
+            {
+                Debug.LogError("pasamos fecha de corte :v");
+                PlayerAccountManager.instance.MakeDailyCutoff();
+                RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+                SaveData.Save(RoomManager.GetInstance().avatarData);
+                OpenDailyCutoffDialog();
+            } // end if
         }
         /*
         DateTime cutDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
@@ -51,7 +63,27 @@ public class MainManager : MonoBehaviour {
         }
         */
 
-        
+
+    }
+
+    public void AcceptCredit()
+    {
+        dialog.confirmButton.onClick.RemoveListener(WatchDetails);
+        dialog.cancelButton.onClick.RemoveListener(WatchDetails);
+        DateTime cutDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
+        cutDate.Add(new TimeSpan(24, 0, 0));
+        PlayerAccountManager.instance.SetCreditAccount(0, cutDate.ToString(), new Credit(10, 1000));
+        RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(RoomManager.GetInstance().avatarData);
+        dialog.gameObject.SetActive(false);
+    }
+
+    public void OpenFirstCreditDialog()
+    {
+        dialog.gameObject.SetActive(true);
+        dialog.warningText.text = "Bienvenido al juego para empezar te ofrecemos un credito inicial de 1000.00MX con una tasa de interes del 10%. Recuerda que el corte o fecha de pago es diario a las 6 am. Trata de mantener tu credito al corriente. Have fun.";
+        dialog.confirmButton.onClick.AddListener(AcceptCredit);
+        dialog.cancelButton.onClick.AddListener(AcceptCredit);
     }
 
     public void OpenDailyCutoffDialog()

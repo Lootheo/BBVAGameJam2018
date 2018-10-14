@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,15 +37,16 @@ public class StoreManager : MonoBehaviour {
     public void BuyWithCredit(Item item)
     {
         rm.avatarData.purchasedItems.Add(item.itemID);
-        PlayerAccountManager.instance.BuyWithCredit(item);
-        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        
 
         if (item.itemType == ItemType.Furniture || item.itemType == ItemType.Room)
         {
             rm.avatarData.houseItems.Add(new Furniture(item.itemID, 0, 0, false));
         }
-        SaveData.Save(rm.avatarData);
         PlayerAccountManager.instance.BuyWithCredit(item);
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(rm.avatarData);
+        
         confirmationDialog.gameObject.SetActive(false);
     }
 
