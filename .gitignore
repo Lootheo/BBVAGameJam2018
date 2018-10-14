@@ -3,3 +3,7 @@ Temp/
 .vs/
 Assets/Plugins/
 Assets/Firebase/
+Assets/Editor Default Resources/
+Assets/Parse/
+Assets/PlayServicesResolver/
+obj/
