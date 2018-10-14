@@ -142,7 +142,8 @@ public class StoreManager : MonoBehaviour {
     {
         if (CanBuyWithPoints(item.itemPrice))
         {
-            OpenBuyConfirmationWindow(item);
+            //OpenBuyConfirmationWindow(item);
+            BuyWithPoints(item);
         }
         else
         {
@@ -157,10 +158,12 @@ public class StoreManager : MonoBehaviour {
             + PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Presiona Aceptar para confirmar la compra.";
         confirmationDialog.confirmButton.onClick.AddListener(() => BuyWithPoints(item));
         confirmationDialog.confirmButton.onClick.AddListener(CloseWindow);
+
     }
 
     public void OpenDeniedShopingWindow(Item item)
     {
+        Debug.LogError("asdasd");
         confirmationDialog.gameObject.SetActive(true);
         confirmationDialog.warningText.text = "No tienes suficiente credito para comprar el objeto " + item.name + ". Credito disponible: " +
             PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Te sugerimos saldar tu cuenta para comprar este objeto.";
