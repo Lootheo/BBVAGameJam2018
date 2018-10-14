@@ -11,6 +11,7 @@ public class StoreManager : MonoBehaviour {
     public ItemType itemTypeFilter;
     public UI_Dialog confirmationDialog;
     public RoomManager rm;
+    public GameObject storeWindow;
 
     // Use this for initialization
     void Start () {
@@ -64,6 +65,7 @@ public class StoreManager : MonoBehaviour {
         SaveData.Save(rm.avatarData);
 
         confirmationDialog.gameObject.SetActive(false);
+        storeWindow.gameObject.SetActive(false);
     }
 
     public void ChangeFilter(int type)
