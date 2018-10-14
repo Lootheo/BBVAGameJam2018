@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 212d172b2301c3a4584a93b48ef0a4cf, type: 3}
-  m_Name: Room_07
+  m_Name: Chair3
   m_EditorClassIdentifier: 
-  itemID: 114
-  itemName: Cuarto morado
-  itemGraphic: {fileID: 21300000, guid: e8f7fec9a116acb4b8218ed01ca52e42, type: 3}
-  itemType: 2
+  itemID: 105
+  itemName: Silla
+  itemGraphic: {fileID: 21300000, guid: 7c515c1bb1b27e94d8b8ca7024d25c17, type: 3}
+  itemType: 1
   clothType: 0
-  furnitureType: 0
+  furnitureType: 3
   itemOffset: {x: 0, y: 0}
-  itemPrice: 0
+  itemPrice: 500
   Description: 
