@@ -34,17 +34,22 @@ public class ClickableCharacter: ClickableItem
         finalPosition = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
         if (finalPosition.x < transform.position.x)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(0.1f, transform.localScale.y, transform.localScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-0.1f, transform.localScale.y, transform.localScale.z);
         }
         //transform.position = new Vector3(positionToMove.x, positionToMove.y, transform.position.z);
     }
 
     public void Update()
     {
-       
+        transform.position = Vector3.MoveTowards(transform.position, finalPosition, 0.3f);
+        if (followingCharacter)
+        {
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        }
+
     }
 }

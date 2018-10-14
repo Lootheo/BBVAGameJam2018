@@ -26,6 +26,12 @@ public class MouseEvents : MonoBehaviour {
         {
             clicked.OnItemClick();
         }
+        ClickableFloor floor = clickableHit.transform.GetComponent<ClickableFloor>();
+        if (floor)
+        {
+                Debug.Log("hitting floor");
+                FindObjectOfType<ClickableCharacter>().MoveCharacter(clickableHit.point);
+        }
         /*if (furniture)
         {
             Debug.Log(furniture.Name);
@@ -47,7 +53,7 @@ public class MouseEvents : MonoBehaviour {
             Debug.Log(character.name);
             Debug.Log(character.level);
 
-        }else if (floor)
+        }else /_if (floor)
         {
             Debug.Log("hitting floor");
             FindObjectOfType<ClickableCharacter>().MoveCharacter(clickableHit.point);

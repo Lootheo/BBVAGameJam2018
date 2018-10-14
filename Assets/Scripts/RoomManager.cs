@@ -29,9 +29,23 @@ public class RoomManager : MonoBehaviour {
         conceptualUI.SetActive(false);
         ffbc.WriteNewUserData(avatarData.avatarName, new ServerData(avatarData));
     }
-
+    private void Update()
+    {
+        
+    }
     public void ShowConceptualMenu(Vector2 playerPos, bool show)
     {
+        if (show)
+        {
+            Camera.main.orthographicSize = 1.75f;
+            Vector3 newCameraPosition = FindObjectOfType<ClickableCharacter>().transform.position;
+            Camera.main.transform.position = new Vector3(newCameraPosition.x, newCameraPosition.y, Camera.main.transform.position.z);
+        }
+        else
+        {
+            Camera.main.orthographicSize = 4.0f;
+        }
+        
         conceptualUI.transform.position = playerPos;
         conceptualUI.SetActive(show);
         conceptualUI.GetComponent<Animator>().SetBool("showMenu", show);

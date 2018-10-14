@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickableFloor : MonoBehaviour {
+public class ClickableFloor : ClickableItem {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void OnItemClick()
+    {
+        base.OnItemClick();
+    }
 }

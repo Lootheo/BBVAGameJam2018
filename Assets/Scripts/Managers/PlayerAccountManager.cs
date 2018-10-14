@@ -49,7 +49,7 @@ public class PlayerAccountManager : MonoBehaviour
     private void Update()
     {
         if (PlayerPointsText)
-            PlayerPointsText.text = Gold.ToString() + ".00MX";
+            PlayerPointsText.text = Gold.ToString() + ".00";
     }
 
     public void AddPlayerGold(int points)
