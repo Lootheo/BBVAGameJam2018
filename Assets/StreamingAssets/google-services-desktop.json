@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "194875048663",
+    "firebase_url": "https://bbvajam.firebaseio.com",
+    "project_id": "bbvajam",
+    "storage_bucket": "bbvajam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194875048663:android:25e8f0ff19e72fd0",
+        "android_client_info": {
+          "package_name": "com.BBVAJam.EpicIdle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194875048663-k0erhpoljqmarm2ti0e95l9ahqr7ilfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC8LV_ZAsOt54OKd-2fT17ckhk_D4r7DQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

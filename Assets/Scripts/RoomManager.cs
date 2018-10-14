@@ -7,6 +7,7 @@ public class RoomManager : MonoBehaviour {
     public GameObject conceptualUI;
     public PlayerData avatarData;
     public List<Item> allItems;
+    public FinalFirebaseConnection ffbc;
     public static RoomManager GetInstance()
     {
         if (instance == null)
@@ -26,6 +27,7 @@ public class RoomManager : MonoBehaviour {
     private void Start()
     {
         conceptualUI.SetActive(false);
+        ffbc.WriteNewUserData(avatarData.avatarName, new ServerData(avatarData));
     }
 
     public void ShowConceptualMenu(Vector2 playerPos, bool show)

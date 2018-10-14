@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="firebase_database_url" translatable="false">https://bbvajam.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">194875048663</string>
+  <string name="google_storage_bucket" translatable="false">bbvajam.appspot.com</string>
+  <string name="project_id" translatable="false">bbvajam</string>
+  <string name="google_api_key" translatable="false">AIzaSyAC8LV_ZAsOt54OKd-2fT17ckhk_D4r7DQ</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAC8LV_ZAsOt54OKd-2fT17ckhk_D4r7DQ</string>
+  <string name="google_app_id" translatable="false">1:194875048663:android:25e8f0ff19e72fd0</string>
+  <string name="default_web_client_id" translatable="false">194875048663-k0erhpoljqmarm2ti0e95l9ahqr7ilfh.apps.googleusercontent.com</string>
+</resources>
