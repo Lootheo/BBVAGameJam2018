@@ -12,8 +12,10 @@ public class ConstructionManager : MonoBehaviour {
     public DataSender sender;
     public Canvas dragCanvas;
     public GameObject furniturePrefab;
+    public GameObject goldGeneratorPrefab;
     List<GameObject> roomFurniture = new List<GameObject>();
     public SpriteRenderer roomSprite;
+    public List<GameObject> goldGenerators = new List<GameObject>();
     // Use this for initialization
 
     public static ConstructionManager instance;
@@ -39,6 +41,8 @@ public class ConstructionManager : MonoBehaviour {
                     continue;
                 }
                 GameObject itemInstance = Instantiate(furniturePrefab, new Vector3(item.positionX, item.positionY, -5f), Quaternion.identity) as GameObject;
+                GameObject goldGenerator = Instantiate(goldGeneratorPrefab, new Vector3(item.positionX, item.positionY, -7f), Quaternion.identity,GameObject.Find("Canvas").transform) as GameObject;
+                goldGenerators.Add(goldGenerator);
                 itemInstance.GetComponent<SpriteRenderer>().sprite = owned.itemGraphic;
                 itemInstance.AddComponent<PolygonCollider2D>();
                 roomFurniture.Add(itemInstance);
@@ -93,6 +97,10 @@ public class ConstructionManager : MonoBehaviour {
         {
             Destroy(item);
         }
+        foreach(GameObject goldGenerator in goldGenerators)
+        {
+            Destroy(goldGenerator);
+        }
         currentShopItems.Clear();
         scrollArea.sizeDelta = new Vector2(0, scrollArea.sizeDelta.y);
     }
@@ -113,10 +121,12 @@ public class ConstructionManager : MonoBehaviour {
     public void BuildItemAtPosition(Item item, Vector3 pos)
     {
         GameObject itemInstance = Instantiate(furniturePrefab, pos, Quaternion.identity) as GameObject;
+        GameObject goldGenerator = Instantiate(goldGeneratorPrefab, pos, Quaternion.identity) as GameObject;
         itemInstance.GetComponent<SpriteRenderer>().sprite = item.itemGraphic;
         itemInstance.AddComponent<PolygonCollider2D>();
         roomFurniture.Add(itemInstance);
         Furniture furniture = rm.avatarData.houseItems.Find(x => x.furnitureID == item.itemID);
+        
         furniture.displayed = true;
         int dex = rm.avatarData.houseItems.IndexOf(furniture);
         rm.avatarData.houseItems[dex].displayed = true;

@@ -20,9 +20,11 @@ public class DragBuild : DragClass
         RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
         Transform mainCanvas = GameObject.Find("Canvas").transform;
         Vector3 goldChargePrefabPos = Camera.main.ScreenToWorldPoint(data.position);
-        if (itemData.furnitureType != FurnitureType.None)
+        if (itemData.furnitureType != FurnitureType.None && itemData.furnitureType != FurnitureType.Shelf)
         {
             Instantiate(GoldGeneratorPrefab, new Vector3(goldChargePrefabPos.x, goldChargePrefabPos.y, -10), Quaternion.identity, mainCanvas);
+        }else if(itemData.furnitureType == FurnitureType.Shelf)
+        {
         }
         if (hit.collider!=null)
         {
