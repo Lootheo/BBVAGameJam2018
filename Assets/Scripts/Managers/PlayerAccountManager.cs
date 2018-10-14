@@ -28,20 +28,20 @@ public class PlayerAccountManager : MonoBehaviour
     public void SetAccountData()
     {
         PlayerAccountData accountData = RoomManager.GetInstance().avatarData.accountData;
-        //CreditAccountData creditData = accountData.currentCreditAccountData;
-        //List<Transaction> allTransactions = accountData.allTransactions;
+        CreditAccountData creditData = accountData.currentCreditAccountData;
+        List<Transaction> allTransactions = accountData.allTransactions;
         List<CreditAccountData> historial = new List<CreditAccountData>();
-        /*for(int i = 0; i < accountData.weeklyHistorial.Count; i++)
+        for(int i = 0; i < accountData.weeklyHistorial.Count; i++)
         {
             historial.Add(accountData.weeklyHistorial[i]);
         }
 
         CreditAccount = new CreditAccountState(creditData.Balance, creditData.CutDate, new Credit(accountData.InterestRate, accountData.CreditLimit));
-        transactions = allTransactions;*/
+        transactions = allTransactions;
         for(int i = 0; i < historial.Count; i++)
         {
-            /*WeeklyCreditState.Add(new CreditAccountState(historial[i].Balance, historial[i].CutDate,
-                new Credit(historial[i].interestRate, historial[i].creditLimit)));*/
+            WeeklyCreditState.Add(new CreditAccountState(historial[i].Balance, historial[i].CutDate,
+                new Credit(historial[i].interestRate, historial[i].creditLimit)));
         } // end for
 
     }
@@ -49,7 +49,7 @@ public class PlayerAccountManager : MonoBehaviour
     private void Update()
     {
         if (PlayerPointsText)
-            PlayerPointsText.text = Gold.ToString() + ".00";
+            PlayerPointsText.text = Gold.ToString() + ".00MX";
     }
 
     public void AddPlayerGold(int points)
