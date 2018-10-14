@@ -50,6 +50,22 @@ public class StoreManager : MonoBehaviour {
         confirmationDialog.gameObject.SetActive(false);
     }
 
+    public void BuyWithPoints(Item item)
+    {
+        rm.avatarData.purchasedItems.Add(item.itemID);
+
+
+        if (item.itemType == ItemType.Furniture || item.itemType == ItemType.Room)
+        {
+            rm.avatarData.houseItems.Add(new Furniture(item.itemID, 0, 0, false));
+        }
+        PlayerAccountManager.instance.BuyWithGold(item);
+        rm.avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
+        SaveData.Save(rm.avatarData);
+
+        confirmationDialog.gameObject.SetActive(false);
+    }
+
     public void ChangeFilter(int type)
     {
         switch (type)
@@ -124,7 +140,7 @@ public class StoreManager : MonoBehaviour {
 
     public void CheckMoneyToBuy(Item item)
     {
-        if (CanBuyWithCredit(item.itemPrice))
+        if (CanBuyWithPoints(item.itemPrice))
         {
             OpenBuyConfirmationWindow(item);
         }
@@ -139,7 +155,7 @@ public class StoreManager : MonoBehaviour {
         confirmationDialog.gameObject.SetActive(true);
         confirmationDialog.warningText.text = "El objeto " + item.name + " tiene un costo de " + item.itemPrice + ".00MX y tienes un credito disponible de"
             + PlayerAccountManager.instance.CreditAccount.AvailableCredit + ".00MX. Presiona Aceptar para confirmar la compra.";
-        confirmationDialog.confirmButton.onClick.AddListener(() => BuyWithCredit(item));
+        confirmationDialog.confirmButton.onClick.AddListener(() => BuyWithPoints(item));
         confirmationDialog.confirmButton.onClick.AddListener(CloseWindow);
     }
 
