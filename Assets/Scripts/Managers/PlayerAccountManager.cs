@@ -11,6 +11,7 @@ public class PlayerAccountManager : MonoBehaviour
     public List<Transaction> transactions;
     public List<CreditAccountState> WeeklyCreditState;
     public TextMeshProUGUI PlayerPointsText;
+    public TextMeshProUGUI playerCreditText;
 
     private void Awake()
     {
@@ -50,6 +51,8 @@ public class PlayerAccountManager : MonoBehaviour
     {
         if (PlayerPointsText)
             PlayerPointsText.text = Gold.ToString() + ".00MX";
+        if (playerCreditText)
+            playerCreditText.text = CreditAccount.Balance.ToString() + ".00MX";
     }
 
     public void AddPlayerGold(int points)
