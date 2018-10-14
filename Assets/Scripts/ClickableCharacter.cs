@@ -15,6 +15,7 @@ public class ClickableCharacter: ClickableItem
     public Vector3 finalPosition;
     public float characterSpeed = 1.0f;
     public bool followingCharacter = false;
+    public bool canMove = true;
     public void Awake()
     {
         finalPosition = transform.position;
@@ -45,7 +46,8 @@ public class ClickableCharacter: ClickableItem
 
     public void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, finalPosition, 0.3f);
+        if(canMove)
+            transform.position = Vector3.MoveTowards(transform.position, finalPosition, 0.3f);
         if (followingCharacter)
         {
             Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);

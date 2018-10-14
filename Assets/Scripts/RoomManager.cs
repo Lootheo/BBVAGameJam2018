@@ -39,10 +39,14 @@ public class RoomManager : MonoBehaviour {
         {
             Camera.main.orthographicSize = 1.75f;
             Vector3 newCameraPosition = FindObjectOfType<ClickableCharacter>().transform.position;
+            FindObjectOfType<ClickableCharacter>().followingCharacter = false;
+            FindObjectOfType<ClickableCharacter>().canMove = false;
             Camera.main.transform.position = new Vector3(newCameraPosition.x, newCameraPosition.y, Camera.main.transform.position.z);
         }
         else
         {
+            FindObjectOfType<ClickableCharacter>().followingCharacter = true;
+            FindObjectOfType<ClickableCharacter>().canMove = true;
             Camera.main.orthographicSize = 4.0f;
         }
         
