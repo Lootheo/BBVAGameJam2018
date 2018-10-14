@@ -14,7 +14,7 @@ public class FinalFirebaseConnection : MonoBehaviour {
     {
         // Set up the Editor before calling into the realtime database.
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://bbvajam.firebaseio.com/");
-        FirebaseDatabase.DefaultInstance.GoOnline();
+
         // Get the root reference location of the database.
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         //reference.ChildAdded += HandleChildAdded;
@@ -22,18 +22,12 @@ public class FinalFirebaseConnection : MonoBehaviour {
 
     public void WriteNewUserData(string userId, ServerData data)
     {
-        StartCoroutine(Waiter(userId, data));
+        string json = JsonUtility.ToJson(data);
+
+        //reference.Child("users").Child(userId).SetRawJsonValueAsync(json);
+        GetPlayerBases();
         //reference.Child("users").Child(userId).Child("username").SetValueAsync(name);
 
-    }
-
-    IEnumerator Waiter(string userId, ServerData data)
-    {
-        yield return new WaitUntil(() => reference != null);
-        string json = JsonUtility.ToJson(data);
-        //Debug.Log(json);
-        reference.Child("users").Child(userId).SetRawJsonValueAsync(json);
-        GetPlayerBases();
     }
 
     void HandleChildAdded(object sender, ChildChangedEventArgs args)

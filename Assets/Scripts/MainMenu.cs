@@ -37,24 +37,6 @@ public class MainMenu : MonoBehaviour {
     void Start () {
         FillGrid(1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void SavePlayerData()
-    {
-        List<int> holdedItems = new List<int>();
-        foreach (Item item in holder.currentItems)
-        {
-            holdedItems.Add(item.itemID);
-
-        }
-        PlayerAccountData  data = new PlayerAccountData(0, 0, 0, new CreditAccountData(), new List<CreditAccountData>(), new List<Transaction>());
-        PlayerData newPlayer = new PlayerData(holdedItems, nameField.text, data);
-        SaveData.Save(newPlayer);
-    }
 
     public void NewPlayer()
     {
