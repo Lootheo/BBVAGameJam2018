@@ -11,6 +11,10 @@ public class GoldGenerator : MonoBehaviour {
     public float assignedBarOffset;
     public Object particles;
 
+    private void Start()
+    {
+        FindObjectOfType<ConstructionManager>().goldGenerators.Add(this.gameObject);
+    }
     public void Update()
     {
             assignedChargeBar.transform.parent.gameObject.SetActive(true);

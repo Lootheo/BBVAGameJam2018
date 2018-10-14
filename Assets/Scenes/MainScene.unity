@@ -5518,6 +5518,7 @@ MonoBehaviour:
   itemTypeFilter: 1
   confirmationDialog: {fileID: 1285192973}
   rm: {fileID: 394129356}
+  storeWindow: {fileID: 0}
 --- !u!1 &854289961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6058,7 +6059,10 @@ MonoBehaviour:
   dragCanvas: {fileID: 1915807953}
   furniturePrefab: {fileID: 1103499745465588, guid: a110e8ceea636664cb8f765119c54e2e,
     type: 2}
+  goldGeneratorPrefab: {fileID: 1006905937999598, guid: 61ccdda8f34a4ef498fac30f5dad1556,
+    type: 2}
   roomSprite: {fileID: 439396652}
+  goldGenerators: []
 --- !u!1 &946241209
 GameObject:
   m_ObjectHideFlags: 0
