@@ -35,7 +35,7 @@ public class DragClass : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //image.rectTransform.sizeDelta = icon.rectTransform.sizeDelta;
 
         m_DraggingPlane = canvas.transform as RectTransform;
-
+        FindObjectOfType<ClickableCharacter>().canMove = false;
 
         SetDraggedPosition(eventData);
     }
