@@ -11,9 +11,10 @@ public class UI_HistorialDeCompra : MonoBehaviour
     public void OpenWindow()
     {
         this.gameObject.SetActive(true);
-        for(int i = 0; i < 4; i++)
+        int count = PlayerAccountManager.instance.transactions.Count - 1;
+        for (int i = 0; i < 4; i++)
         {
-            int count = PlayerAccountManager.instance.transactions.Count - 1;
+            
             if(count > 0)
             {
                 mov1[i].text = "Detalle: " + PlayerAccountManager.instance.transactions[count].Description + ". Pago: " +
@@ -23,6 +24,7 @@ public class UI_HistorialDeCompra : MonoBehaviour
             {
                 mov1[i].text = "No hay suficientes movimientos";
             }
+            count--;
             
         }
          

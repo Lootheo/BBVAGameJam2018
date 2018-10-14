@@ -38,7 +38,7 @@ public class MainManager : MonoBehaviour {
         dialog.cancelButton.onClick.RemoveListener(WatchDetails);
         DateTime cutDate = DateTime.Now;
         cutDate.Add(new TimeSpan(0, 5, 0));
-        PlayerAccountManager.instance.SetCreditAccount(0, cutDate.ToString(), new Credit(10, 1000));
+        PlayerAccountManager.instance.SetCreditAccount(0, cutDate.ToString(), new Credit(10, 10000));
         PlayerAccountManager.instance.AskEffectiveCredit(1000);
         RoomManager.GetInstance().avatarData.SetPlayerAccountData(PlayerAccountManager.instance);
         SaveData.Save(RoomManager.GetInstance().avatarData);
