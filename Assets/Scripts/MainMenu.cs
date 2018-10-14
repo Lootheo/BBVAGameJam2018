@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     public RectTransform gridRect;
@@ -54,6 +55,7 @@ public class MainMenu : MonoBehaviour {
         PlayerAccountData  data = new PlayerAccountData(0, 0, 0, new CreditAccountData(), new List<CreditAccountData>(), new List<Transaction>());
         PlayerData newPlayer = new PlayerData(holdedItems, nameField.text, data);
         SaveData.Save(newPlayer);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void NewPlayer()
