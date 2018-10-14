@@ -16,7 +16,7 @@ public class Item : ScriptableObject
     public FurnitureType furnitureType;
     public Vector2 itemOffset;
     public int itemPrice;
-
+    public string Description;
     public Item()
     {
         
